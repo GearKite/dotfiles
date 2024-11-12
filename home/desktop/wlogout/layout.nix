@@ -9,7 +9,7 @@
     }
     {
       "label" = "logout";
-      "action" = "killall -15 Hyprland";
+      "action" = "/usr/bin/env bash ${config.xdg.configHome}/wlogout/scripts/logout.sh";
       "text" = "Exit";
       "keybind" = "e";
     }

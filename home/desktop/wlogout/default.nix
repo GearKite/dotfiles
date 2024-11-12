@@ -13,4 +13,8 @@
   home.file."${config.xdg.configHome}/wlogout/icons" = {
     source = ./icons;
   };
+
+  home.file."${config.xdg.configHome}/wlogout/scripts" = {
+    source = ./scripts;
+  };
 }
