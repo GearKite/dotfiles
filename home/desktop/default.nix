@@ -13,5 +13,6 @@
     ./wlogout
 
     ./dependencies.nix
+    ./theme.nix
   ];
 }
