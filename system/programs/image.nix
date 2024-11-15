@@ -4,7 +4,6 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    xsaneGimp
     unstable.gimp
     krita
     darktable

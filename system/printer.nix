@@ -24,4 +24,8 @@
   nixpkgs.config.packageOverrides = pkgs: {
     xsaneGimp = pkgs.xsane.override { gimpSupport = true; };
   };
+
+  environment.systemPackages = with pkgs; [
+    xsaneGimp
+  ];
 }
