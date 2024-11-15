@@ -8,7 +8,7 @@
     input-field = {
       monitor = "";
       size = "200, 50";
-      outline_thickness = 3;
+      outline_thickness = 5;
       dots_size = 0.33; # Scale of input-field height, 0.2 - 0.8
       dots_spacing = 0.15; # Scale of dots' absolute size, 0.0 - 1.0
       dots_center = true;
@@ -25,7 +25,7 @@
       fail_color = "rgb(204, 34, 34)"; # if authentication failed, changes outer_color and fail message color
       fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
       fail_transition = 300; # transition time in ms between normal outer_color and fail_color
-      capslock_color = -1;
+      capslock_color = "rgb(204, 0, 0)";
       numlock_color = -1;
       bothlock_color = -1; # when both locks are active. -1 means don't change outer color (same for above)
       invert_numlock = false; # change color if numlock is off
