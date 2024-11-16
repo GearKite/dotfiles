@@ -52,4 +52,6 @@
   };
 
   programs.seahorse.enable = true;
+
+  security.pam.services.hyprlock = {};
 }
