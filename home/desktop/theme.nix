@@ -28,4 +28,15 @@
     };
   };
 
+  wayland.windowManager.hyprland.settings.env = [
+    "HYPRCURSOR_THEME,${home.pointerCursor.name}"
+    "HYPRCURSOR_SIZE,${home.pointerCursor.size}"
+
+    "XCURSOR_THEME,${home.pointerCursor.name}"
+    "XCURSOR_SIZE,${home.pointerCursor.size}"
+  ];
+
+  home.packages = with pkgs; [
+    hyprcursor
+  ];
 }

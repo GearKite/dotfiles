@@ -18,10 +18,7 @@
 
       # Mozilla
       "MOZ_ENABLE_WAYLAND,1"
-
-      # Set the cursor size for xcursor
-      "XCURSOR_SIZE,24"
-
+      
       # Disable appimage launcher by default
       "APPIMAGELAUNCHER_DISABLE,1"
 
