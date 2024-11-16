@@ -29,11 +29,11 @@
   };
 
   wayland.windowManager.hyprland.settings.env = [
-    "HYPRCURSOR_THEME,${home.pointerCursor.name}"
-    "HYPRCURSOR_SIZE,${home.pointerCursor.size}"
+    "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
+    "HYPRCURSOR_SIZE,${toString config.home.pointerCursor.size}"
 
-    "XCURSOR_THEME,${home.pointerCursor.name}"
-    "XCURSOR_SIZE,${home.pointerCursor.size}"
+    "XCURSOR_THEME,${config.home.pointerCursor.name}"
+    "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
   ];
 
   home.packages = with pkgs; [
