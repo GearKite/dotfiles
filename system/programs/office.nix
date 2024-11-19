@@ -22,6 +22,10 @@ in
     unstable.nuclear
     monero-gui
     loupe
+
+    (openai-whisper-cpp.override {
+      cudaSupport = true; # Enable CUDA support
+    })
   ];
 
   programs.kdeconnect = {
