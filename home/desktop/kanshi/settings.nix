@@ -54,6 +54,24 @@
     {
       profile.outputs = [
         {
+          criteria = "BOE 0x0729 Unknown";
+          mode = "1920x1080@60";
+          position = "0,0";
+          status = "enable";
+          scale = 1.0;
+        }
+        {
+          criteria = "HDMI-A-1";
+          mode = "highres@highvrr";
+          status = "enable";
+          #scale = 2.0;
+        }
+      ];
+    }
+
+    {
+      profile.outputs = [
+        {
           criteria = "LG Electronics LG ULTRAGEAR 311NTMX2J683";
           mode = "2560x1440@143.97Hz";
           position = "1920,0";
