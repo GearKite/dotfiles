@@ -35,4 +35,8 @@
     #enableIPv4 = true;
     #enableIPv6 = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    wireguard-tools
+  ];
 }
