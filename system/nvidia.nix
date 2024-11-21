@@ -24,7 +24,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
@@ -37,9 +37,8 @@
       version = "555.58";
       sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
       sha256_aarch64 = lib.fakeSha256;
-      openSha256 = "sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb=";
+      openSha256 = "sha256-hEAmFISMuXm8tbsrB+WiUcEFuSGRNZ37aKWvf0WJ2/c=";
       settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-      #settingsSha256 = lib.fakeSha256;
       persistencedSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
     };
 
