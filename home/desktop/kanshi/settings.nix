@@ -62,9 +62,7 @@
         }
         {
           criteria = "HDMI-A-1";
-          mode = "highres@highvrr";
           status = "enable";
-          #scale = 2.0;
         }
       ];
     }
