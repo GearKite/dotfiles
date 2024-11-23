@@ -15,7 +15,8 @@
       modules-left = [
         "custom/appmenu"
         "group/quicklinks"
-        "hyprland/window"
+        "cpu"
+        "memory"
       ];
 
       modules-center = [
@@ -23,15 +24,13 @@
       ];
 
       modules-right = [
+        "tray"
         "mpd"
         "pulseaudio"
         "network"
-        "cpu"
-        "memory"
         "keyboard-state"
         "battery"
         "clock"
-        "tray"
         "custom/exit"
       ];
     };

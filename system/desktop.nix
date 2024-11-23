@@ -37,6 +37,7 @@
       corefonts
       vistafonts
       font-awesome
+      material-design-icons
     ];
     fontDir.enable = true;
 

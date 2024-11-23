@@ -15,18 +15,6 @@
         };
       };
 
-      # Hyprland Window
-      "hyprland/window" = {
-        rewrite = {
-          "(.*) - Brave" = "$1";
-          "(.*) - Chromium" = "$1";
-          "(.*) - Brave Search" = "$1";
-          "(.*) - Outlook" = "$1";
-          "(.*) Microsoft Teams" = "$1";
-        };
-        separate-outputs = true;
-      };
-
       # Fuzzel Application Launcher
       "custom/appmenu" = {
         format = "Apps";
@@ -56,65 +44,40 @@
 
       # System tray
       tray = {
-        # "icon-size"= 21;
+        icon-size = 21;
         spacing = 10;
       };
 
       # Clock
       clock = {
-        # "timezone"= "America/New_York";
-        #tooltip-format = "<big>{=%Y %B %s}</big>\n<tt><small>{calendar}</small></tt>";
-        #format-alt = "{=%Y-%m-%d}";
         format = "{:%H:%M:%S}";
         interval = 1; # Update every second
 
-        format-alt = "{:%A, %B %d, %Y (%R)}  ";
-        tooltip-format = "<tt><small>{calendar}</small></tt>";
-
-        calendar = {
-          mode = "month";
-          mode-mon-col = 3;
-          weeks-pos = "right";
-          on-scroll = 1;
-          on-click-right = "mode";
-          format = {
-            months = "<span color='#ffead3'><b>{}</b></span>";
-            days = "<span color='#ecc6d9'><b>{}</b></span>";
-            weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-            weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-            today = "<span color='#ff6699'><b><u>{}</u></b></span>";
-          };
-        };
-      };
-
-      # System
-      "custom/system" = {
-        format = "";
-        tooltip = false;
+        on-click = "thunderbird -calendar && hyprctl dispatch focuswindow class:thunderbird";
       };
 
       # CPU
       cpu = {
-        format = "/ C {usage}% ";
+        format = " {}%";
         on-click = "alacritty -e htop";
       };
 
       # Memory
       memory = {
-        format = "/ M {}% ";
+        format = " {}% ";
         on-click = "alacritty -e htop";
       };
 
       # Harddisc space used
       disk = {
         interval = 30;
-        format = "D {percentage_used}% ";
+        format = " {percentage_used}% ";
         path = "/";
         on-click = "alacritty -e htop";
       };
 
       "hyprland/language" = {
-        format = "/ K {short}";
+        format = " {short}";
       };
 
       # Group Hardware
@@ -137,15 +100,16 @@
       # Network
       network = {
         format = "{ifname}";
-        format-wifi = "   {signalStrength}%";
-        format-ethernet = "  {ipaddr}";
-        format-disconnected = "Not connected"; #An empty format will hide the module.
+        format-wifi = "{icon}";
+        format-ethernet = "";
+        format-disconnected = "󰌙"; #An empty format will hide the module.
         tooltip-format = " {ifname} via {gwaddri}";
         tooltip-format-wifi = "   {essid} ({signalStrength}%)";
         tooltip-format-ethernet = "  {ifname} ({ipaddr}/{cidr})";
         tooltip-format-disconnected = "Disconnected";
         max-length = 50;
         on-click = "alacritty -e nmtui";
+        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
       };
 
       # Battery
@@ -155,10 +119,10 @@
           warning = 30;
           critical = 15;
         };
-        format = "{icon}   {capacity}%";
-        format-charging = "  {capacity}%";
-        format-plugged = "  {capacity}%";
-        format-alt = "{icon}  {time}";
+        format = "{icon}";
+        format-charging = "";
+        format-plugged = "";
+        format-alt = "{icon}  {percentage}%  {time}";
         # "format-good"= ""; # An empty format will hide the module
         # "format-full"= "";
         format-icons = [ " " " " " " " " " " ];
