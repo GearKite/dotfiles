@@ -58,7 +58,7 @@
 
       # CPU
       cpu = {
-        format = " {}%";
+        format = "  {}% ";
         on-click = "alacritty -e htop";
       };
 
@@ -100,7 +100,7 @@
       # Network
       network = {
         format = "{ifname}";
-        format-wifi = "{icon}";
+        format-wifi = "{icon}  ";
         format-ethernet = "";
         format-disconnected = "󰌙"; #An empty format will hide the module.
         tooltip-format = " {ifname} via {gwaddri}";
