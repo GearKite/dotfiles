@@ -5,11 +5,6 @@
     auto-optimise-store = true;
   };
 
-  nix.optimise = {
-    automatic = true;
-    dates = [ "04:26" "10:26" "19:26" ];
-  };
-
   programs.ccache.enable = true;
 
   environment.systemPackages = with pkgs; [
