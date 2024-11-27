@@ -10,7 +10,7 @@ in
     tor-browser
     mpv
     thunderbird
-    ungoogled-chromium
+    brave
     unstable.librewolf
     distrobox
     qgis
