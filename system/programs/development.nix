@@ -9,7 +9,10 @@
     ansible
   ];
 
-  virtualisation.docker.enable = true;
-  programs.direnv.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true; # deprecated, but '--gpus' doesn't work without this
+  };
 
+  programs.direnv.enable = true;  
 }
