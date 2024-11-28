@@ -8,6 +8,10 @@
       "workspace 16, class:(nuclear)"
       "workspace 17, class:(Element)"
       "workspace 18, class:(Signal-desktop)"
+
+      # Open Qalculate as a small floating window
+      "float, title:Qalculate!"
+      "size > >, title:Qalculate!"
     ];
    };
 }
