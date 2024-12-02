@@ -12,6 +12,9 @@
       # Open Qalculate as a small floating window
       "float, title:Qalculate!"
       "size > >, title:Qalculate!"
+
+      "float, class:pavucontrol"
+      "size > >, class:pavucontrol"
     ];
    };
 }
