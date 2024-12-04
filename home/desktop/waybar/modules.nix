@@ -25,7 +25,7 @@
 
       # Power Menu
       "custom/exit" = {
-        format = "⏻";
+        format = "⏻ ";
         tooltip-format = "Powermenu";
         on-click = "wlogout -b 4";
         tooltip = false;
@@ -138,13 +138,14 @@
         format-source = "{volume}% ";
         format-source-muted = "";
         format-icons = {
-          headphone = "";
+          headphone = "";
+          hdmi = "󰤽";
           hands-free = "";
           headset = "";
           phone = "";
           portable = "";
           car = "";
-          default = [ "" " " " " ];
+          default = [ "." ". " " " ];
         };
         on-click = "pavucontrol";
       };
@@ -175,6 +176,14 @@
         };
         on-click-right = "hyprlock";
       };
+
+      #GPU usage
+      "custom/gpu" = {
+        exec = "cat /sys/class/hwmon/hwmon3/device/gpu_busy_percent"; #This is hardcoded and you will have a different path for your GPU
+        format = "󰢮  {}%";
+        return-type = "";
+        interval = 10 ;
+     };
     };
   };
 }
