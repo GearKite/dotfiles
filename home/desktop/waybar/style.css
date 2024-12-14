@@ -11,7 +11,7 @@ window#waybar {
 
 #workspaces,
 #workspaces button.active,
-#tray
+#tray,
 #battery,
 #custom-exit,
 #custom-gpu,
@@ -44,7 +44,7 @@ window#waybar {
 }
 
 #custom-exit {
-    padding: 0 13px 0 10px;
+    padding: 0 14px 0 10px;
     background-color: #F38BA8; /* red */
 }
 

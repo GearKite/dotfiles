@@ -100,8 +100,8 @@
       # Network
       network = {
         format = "{ifname}";
-        format-wifi = "{icon}  ";
-        format-ethernet = "";
+        format-wifi = "{icon}";
+        format-ethernet = " ";
         format-disconnected = "󰌙"; #An empty format will hide the module.
         tooltip-format = " {ifname} via {gwaddri}";
         tooltip-format-wifi = "   {essid} ({signalStrength}%)";
@@ -182,8 +182,8 @@
         exec = "cat /sys/class/hwmon/hwmon3/device/gpu_busy_percent"; #This is hardcoded and you will have a different path for your GPU
         format = "󰢮  {}%";
         return-type = "";
-        interval = 10 ;
-     };
+        interval = 10;
+      };
     };
   };
 }
