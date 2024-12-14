@@ -20,16 +20,18 @@ window#waybar {
 #bluetooth,
 #pulseaudio,
 #memory,
+#battery,
 #cpu,
 #clock {
     font-weight: bold;
-    margin: 0 4px;
+    margin: 0 2px;
     padding: 0 8px;
     border-radius: 24px;
     color: #45475A;
 }
 
 #network {
+    padding: 0 14px 0 9px;
     background-color: #F5C2E7; /* magenta */
 }
 
@@ -42,7 +44,7 @@ window#waybar {
 }
 
 #custom-exit {
-    padding: 0 12px;
+    padding: 0 13px 0 10px;
     background-color: #F38BA8; /* red */
 }
 
@@ -69,4 +71,9 @@ window#waybar {
 
 #workspaces button.active {
     background-color: #babbf1; /* pink */
+}
+
+#battery {
+    padding: 0 8px;
+    background-color: #91d7e3; /* sky blue */
 }

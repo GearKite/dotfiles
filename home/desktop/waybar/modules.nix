@@ -25,7 +25,7 @@
 
       # Power Menu
       "custom/exit" = {
-        format = "⏻ ";
+        format = "⏻";
         tooltip-format = "Powermenu";
         on-click = "wlogout -b 4";
         tooltip = false;
@@ -58,20 +58,20 @@
 
       # CPU
       cpu = {
-        format = "   {}% ";
+        format = "   {}%";
         on-click = "alacritty -e htop";
       };
 
       # Memory
       memory = {
-        format = " {}% ";
+        format = " {}%";
         on-click = "alacritty -e htop";
       };
 
       # Harddisc space used
       disk = {
         interval = 30;
-        format = " {percentage_used}% ";
+        format = " {percentage_used}%";
         path = "/";
         on-click = "alacritty -e htop";
       };
