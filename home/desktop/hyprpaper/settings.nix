@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  wallpaper-file = "${pkgs.hyprland}/share/hypr/wall2.png";
+in
 {
   services.hyprpaper.settings = {
     ipc = "on";
@@ -6,10 +9,10 @@
     splash_offset = 2.0;
 
     preload =
-      [ "${pkgs.hyprland}/share/hyprland/wall2.png" ];
+      [ wallpaper-file ];
 
     wallpaper = [
-      ", ${pkgs.hyprland}/share/hyprland/wall2.png"
+      ", ${wallpaper-file}"
     ];
   };
 }
