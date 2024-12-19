@@ -3,7 +3,7 @@
 {
   home.pointerCursor = {
     gtk.enable = true;
-    # x11.enable = true;
+    x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 16;
@@ -13,8 +13,11 @@
     enable = true;
 
     theme = {
-      package = pkgs.sweet;
-      name = "Sweet-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        variant = "mocha";
+      };
+      name = "catppuccin-mocha-mauve-standard";
     };
 
     iconTheme = {
@@ -38,5 +41,7 @@
 
   home.packages = with pkgs; [
     hyprcursor
+    catppuccin-qt5ct
+    libsForQt5.qt5ct
   ];
 }

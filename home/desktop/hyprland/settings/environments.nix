@@ -9,7 +9,7 @@
 
       # QT
       "QT_QPA_PLATFORM,wayland;xcb"
-      "QT_QPA_PLATFORMTHEME,qt6ct"
+      "QT_QPA_PLATFORMTHEME,catppuccin-mocha-mauve"
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       "QT_AUTO_SCREEN_SCALE_FACTOR,1"
 
@@ -18,7 +18,7 @@
 
       # Mozilla
       "MOZ_ENABLE_WAYLAND,1"
-      
+
       # Disable appimage launcher by default
       "APPIMAGELAUNCHER_DISABLE,1"
 
