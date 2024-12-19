@@ -41,6 +41,14 @@
           command = "/run/current-system/sw/bin/ddcutil";
           options = [ "NOPASSWD" ];
         }
+        {
+          command = "${pkgs.systemd}/bin/halt";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/halt";
+          options = [ "NOPASSWD" ];
+        }
       ];
       groups = [ "wheel" ];
     }];
@@ -70,5 +78,9 @@
         TimeoutStopSec = 10;
       };
     };
+  };
+
+  services.clamav = {
+    scanner.enable = true;
   };
 }
