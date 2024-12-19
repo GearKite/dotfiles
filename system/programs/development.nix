@@ -7,6 +7,7 @@
     nixpkgs-fmt
     sqlitebrowser
     ansible
+    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
   ];
 
   virtualisation.docker = {
