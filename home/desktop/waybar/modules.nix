@@ -58,7 +58,7 @@
 
       # CPU
       cpu = {
-        format = "  {}% ";
+        format = "   {}% ";
         on-click = "alacritty -e htop";
       };
 
