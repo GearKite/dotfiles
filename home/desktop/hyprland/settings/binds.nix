@@ -20,7 +20,7 @@ in
       "$mainMod, B, exec, ${constants.executable.browser}" # Opens the browser
       "$mainMod, V, exec, cliphist list | fuzzel -d | cliphist decode | wl-copy"
       "$mainMod, L, exec, loginctl lock-session" # lock
-      "$mainMod, CTRL, L, exec, sudo halt -f" # force halt
+      "$mainMod CTRL, L, exec, sudo halt -f" # force halt
 
       # Screenshots
       ", Print, exec, hyprshot -c -m output -o ~/Pictures/Screenshots -f $(date '+%Y-%m-%dT%H-%M-%S').png" # monitor
