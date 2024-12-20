@@ -3,7 +3,7 @@
   imports = [
     ./modules.nix
     ./settings.nix
-    # ./quicklinks.nix
+    ./quicklinks.nix
   ];
 
   programs.waybar = {

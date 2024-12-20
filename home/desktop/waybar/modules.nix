@@ -138,14 +138,13 @@
         format-source = "{volume}% ";
         format-source-muted = "";
         format-icons = {
-          headphone = "";
-          hdmi = "󰤽";
+          headphone = "";
           hands-free = "";
           headset = "";
           phone = "";
           portable = "";
           car = "";
-          default = [ "." ". " " " ];
+          default = [ "" " " " " ];
         };
         on-click = "pavucontrol";
       };
@@ -175,14 +174,6 @@
           deactivated = "";
         };
         on-click-right = "hyprlock";
-      };
-
-      #GPU usage
-      "custom/gpu" = {
-        exec = "cat /sys/class/hwmon/hwmon3/device/gpu_busy_percent"; #This is hardcoded and you will have a different path for your GPU
-        format = "󰢮  {}%";
-        return-type = "";
-        interval = 10;
       };
     };
   };
