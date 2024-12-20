@@ -22,6 +22,7 @@ in
     unstable.nuclear
     monero-gui
     loupe
+    unstable.qbittorrent
 
     (openai-whisper-cpp.override {
       cudaSupport = true; # Enable CUDA support
