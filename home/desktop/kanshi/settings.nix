@@ -16,10 +16,6 @@
           position = "2560,540";
           status = "enable";
         }
-        {
-          criteria = "Unknown-1";
-          status = "disable";
-        }
       ];
     }
 
@@ -31,10 +27,6 @@
           position = "0,0";
           adaptiveSync = true;
           status = "enable";
-        }
-        {
-          criteria = "Unknown-1";
-          status = "disable";
         }
       ];
     }
