@@ -13,7 +13,7 @@ in
     })
 
     yt-dlp
-    ffmpeg
+    ffmpeg-full
     easyeffects
     qjackctl
     unstable.kdenlive
