@@ -3,6 +3,9 @@
 # Gracefully close all apps
 hyprctl --batch "$(hyprctl -j clients | jq -j '.[] | "dispatch closewindow address:\(.address); "')"
 
+# Clear clipboard history (for security)
+cliphist wipe
+
 sleep 1
 
 # Exit Hyprland
