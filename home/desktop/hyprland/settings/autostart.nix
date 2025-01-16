@@ -7,7 +7,7 @@ in
     exec-once = [
       "waybar"
       "dunst"
-      "wl-paste --watch cliphist store"
+      "wl-paste --watch cliphist -max-items 30 store"
 
       "systemctl --user restart hyprland-session.target"
       "systemctl --user start hypridle.service"
