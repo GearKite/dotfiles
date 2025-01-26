@@ -15,4 +15,9 @@ in
     package = unstable.ollama;
     acceleration = "cuda";
   };
+
+  services.open-webui = {
+    enable = true;
+    package = unstable.open-webui;
+  };
 }
