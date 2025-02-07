@@ -23,6 +23,7 @@ in
     monero-gui
     loupe
     unstable.qbittorrent
+    unstable.mcpelauncher-ui-qt # not exactly an office program :P
 
     (openai-whisper-cpp.override {
       cudaSupport = true; # Enable CUDA support
