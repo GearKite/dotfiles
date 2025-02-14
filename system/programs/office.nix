@@ -1,6 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   environment.systemPackages = with pkgs; [
@@ -24,6 +33,7 @@ in
     loupe
     unstable.qbittorrent
     unstable.mcpelauncher-ui-qt # not exactly an office program :P
+    simplex-chat-desktop
 
     (openai-whisper-cpp.override {
       cudaSupport = true; # Enable CUDA support
