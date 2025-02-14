@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     git
     vscode-fhs
-    nixpkgs-fmt
+    nixfmt-rfc-style
     sqlitebrowser
     ansible
     (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
