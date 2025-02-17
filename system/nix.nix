@@ -1,7 +1,16 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   nix.settings = {
     extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
 
@@ -20,8 +29,11 @@
 
   nix.gc = {
     automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 3d";
+  };
+
+  nix.optimise = {
+    automatic = true;
   };
 
   system.autoUpgrade = {
