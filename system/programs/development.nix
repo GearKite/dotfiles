@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.adb.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -6,8 +12,6 @@
     vscode-fhs
     nixfmt-rfc-style
     sqlitebrowser
-    ansible
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
   ];
 
   virtualisation.docker = {
@@ -15,5 +19,5 @@
     enableNvidia = true; # deprecated, but '--gpus' doesn't work without this
   };
 
-  programs.direnv.enable = true;  
+  programs.direnv.enable = true;
 }
