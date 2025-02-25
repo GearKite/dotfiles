@@ -17,7 +17,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    twemoji-color-font
     ddcutil
   ];
 
@@ -27,7 +26,6 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      nerdfonts
       twemoji-color-font
       liberation_ttf
       fira-code
