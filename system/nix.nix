@@ -12,6 +12,7 @@
       "flakes"
     ];
     auto-optimise-store = true;
+    trusted-users = [ "@wheel" ];
   };
 
   programs.ccache.enable = true;
