@@ -1,6 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   environment.systemPackages = with pkgs; [
@@ -16,7 +25,7 @@ in
     ffmpeg-full
     easyeffects
     qjackctl
-    unstable.kdenlive
+    unstable.kdePackages.kdenlive
   ];
 
   # OBS virtual cam
