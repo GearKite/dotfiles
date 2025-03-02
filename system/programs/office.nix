@@ -15,7 +15,10 @@ in
   environment.systemPackages = with pkgs; [
     unstable.element-desktop
     onlyoffice-bin_latest
-    unstable.josm
+    (unstable.josm.override {
+      # Give JOSM a bit more RAM (hopefully it's enough :sob:)
+      extraJavaOpts = "-Xmx32G";
+    })
     tor-browser
     mpv
     thunderbird
