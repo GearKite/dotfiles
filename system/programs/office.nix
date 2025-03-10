@@ -10,6 +10,9 @@ let
       allowUnfree = true;
     };
   };
+
+  gomuksFlake = builtins.getFlake "github:gearkite/gomuks/flake-package";
+  gomuksFromFlake = gomuksFlake.packages.${pkgs.system}.gomuks;
 in
 {
   environment.systemPackages = with pkgs; [
@@ -41,10 +44,16 @@ in
     (openai-whisper-cpp.override {
       cudaSupport = true; # Enable CUDA support
     })
+    gomuksFromFlake
   ];
 
   programs.kdeconnect = {
     enable = true;
     package = pkgs.kdePackages.kdeconnect-kde;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
+  ];
+
 }
