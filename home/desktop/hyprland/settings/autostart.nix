@@ -15,6 +15,8 @@ in
 
       "[workspace 1 silent] ${constants.executable.browser}"
       "[workspace 2 silent] ${constants.executable.terminal}"
+      "[workspace 17 silent] simplex-chat-desktop"
+      "[workspace 17 silent] cwtch"
 
       "[workspace 11 silent] thunderbird"
 
