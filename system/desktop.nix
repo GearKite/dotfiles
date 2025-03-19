@@ -33,8 +33,6 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
-      corefonts
-      vistafonts
       font-awesome
       material-design-icons
     ];

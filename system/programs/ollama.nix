@@ -1,6 +1,20 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = import <nixos-unstable> {
+    config.allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "cuda_cudart"
+        "libcublas"
+        "cuda_cccl"
+        "cuda_nvcc"
+      ];
+  };
 in
 {
   disabledModules = [ "services/misc/ollama.nix" ];
@@ -12,12 +26,8 @@ in
 
   services.ollama = {
     enable = true;
-    package = unstable.ollama;
+    package = unstable.ollama-cuda;
     acceleration = "cuda";
   };
 
-  services.open-webui = {
-    enable = true;
-    package = unstable.open-webui;
-  };
 }

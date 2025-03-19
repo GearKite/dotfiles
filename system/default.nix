@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./bluetooth.nix
     ./boot.nix
@@ -23,7 +24,7 @@
     ./programs/office.nix
     ./programs/ollama.nix
     ./programs/pentest.nix
-    ./programs/steam.nix
+    #./programs/steam.nix
     ./programs/tor.nix
     ./programs/utils.nix
     ./programs/video.nix

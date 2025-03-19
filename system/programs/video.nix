@@ -5,11 +5,7 @@
   ...
 }:
 let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  unstable = import <nixos-unstable> { };
 in
 {
   environment.systemPackages = with pkgs; [

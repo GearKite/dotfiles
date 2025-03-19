@@ -45,6 +45,41 @@
     flags = [ "--upgrade-all" ];
   };
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "zerotierone"
+      # Brother scanner
+      "brscan4"
+      "brother-udev-rule-type1"
+      "brscan4-etc-files"
+      # Nvidia (why so many!?)
+      "nvidia-x11"
+      "cuda_cccl"
+      "cuda_cudart"
+      "libcublas"
+      "cuda_nvcc"
+      "cuda-merged"
+      "cuda_cuobjdump"
+      "cuda_gdb"
+      "cuda_nvdisasm"
+      "cuda_nvprune"
+      "cuda_cupti"
+      "cuda_cuxxfilt"
+      "cuda_nvml_dev"
+      "cuda_nvrtc"
+      "cuda_nvtx"
+      "cuda_profiler_api"
+      "cuda_sanitizer_api"
+      "libcufft"
+      "libcurand"
+      "libcusolver"
+      "libnvjitlink"
+      "libcusparse"
+      "libnpp"
+      "nvidia-persistenced"
+    ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

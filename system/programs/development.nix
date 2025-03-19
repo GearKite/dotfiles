@@ -9,7 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     git
-    vscode-fhs
+    vscodium-fhs
     nixfmt-rfc-style
     sqlitebrowser
   ];
