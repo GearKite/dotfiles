@@ -50,8 +50,8 @@
 
       # Clock
       clock = {
-        format = "{:%H:%M:%S}";
-        interval = 1; # Update every second
+        format = "{:%A}";
+        interval = 300; # Update every 5 minutes
 
         on-click = "thunderbird -calendar && hyprctl dispatch focuswindow class:thunderbird";
       };
@@ -102,14 +102,20 @@
         format = "{ifname}";
         format-wifi = "{icon}";
         format-ethernet = " ";
-        format-disconnected = "󰌙"; #An empty format will hide the module.
+        format-disconnected = "󰌙"; # An empty format will hide the module.
         tooltip-format = " {ifname} via {gwaddri}";
         tooltip-format-wifi = "   {essid} ({signalStrength}%)";
         tooltip-format-ethernet = "  {ifname} ({ipaddr}/{cidr})";
         tooltip-format-disconnected = "Disconnected";
         max-length = 50;
         on-click = "alacritty -e nmtui";
-        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+        format-icons = [
+          "󰤯"
+          "󰤟"
+          "󰤢"
+          "󰤥"
+          "󰤨"
+        ];
       };
 
       # Battery
@@ -125,7 +131,13 @@
         format-alt = "{icon}  {percentage}%  {time}";
         # "format-good"= ""; # An empty format will hide the module
         # "format-full"= "";
-        format-icons = [ " " " " " " " " " " ];
+        format-icons = [
+          " "
+          " "
+          " "
+          " "
+          " "
+        ];
       };
 
       # Pulseaudio
@@ -144,7 +156,11 @@
           phone = "";
           portable = "";
           car = "";
-          default = [ "" " " " " ];
+          default = [
+            ""
+            " "
+            " "
+          ];
         };
         on-click = "pavucontrol";
       };
