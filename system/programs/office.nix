@@ -7,7 +7,10 @@
 let
   unstable = import <nixos-unstable> {
     config = {
-      allowUnfree = true;
+      permittedInsecurePackages = [
+        "olm-3.2.16"
+        "fluffychat-linux-1.25.1"
+      ];
     };
   };
 
@@ -16,44 +19,56 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    # browsers
+    tor-browser
+    unstable.brave
+    ungoogled-chromium
+    unstable.librewolf
+
+    # internet
+    thunderbird
+    nextcloud-client
+    monero-gui
+    unstable.qbittorrent
+
+    # media
+    mpv
+    vlc
+    loupe
+    lollypop
+
+    # messengers (i use them all, mostly)
+    signal-desktop
     unstable.element-desktop
+    simplex-chat-desktop
+    unstable.cwtch-ui
+    unstable.fluffychat
+    gomuksFromFlake
+
+    # utils & misc
+    (openai-whisper-cpp.override {
+      cudaSupport = true; # Enable CUDA support
+    })
+    unstable.mcpelauncher-ui-qt
+    distrobox
+    qgis
+    qalculate-gtk
     onlyoffice-bin_latest
     (unstable.josm.override {
       # Give JOSM a bit more RAM (hopefully it's enough :sob:)
       extraJavaOpts = "-Xmx32G";
     })
-    tor-browser
-    mpv
-    thunderbird
-    ungoogled-chromium
-    unstable.librewolf
-    distrobox
-    qgis
-    nextcloud-client
-    kgpg
-    vlc
-    signal-desktop
-    qalculate-gtk
-    unstable.nuclear
-    monero-gui
-    loupe
-    unstable.qbittorrent
-    unstable.mcpelauncher-ui-qt # not exactly an office program :P
-    simplex-chat-desktop
+  ];
 
-    (openai-whisper-cpp.override {
-      cudaSupport = true; # Enable CUDA support
+  nixpkgs.overlays = [
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [ self.mpvScripts.mpris ];
+      };
     })
-    gomuksFromFlake
   ];
 
   programs.kdeconnect = {
     enable = true;
-    package = pkgs.kdePackages.kdeconnect-kde;
   };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "olm-3.2.16"
-  ];
-
 }
