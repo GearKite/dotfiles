@@ -36,6 +36,7 @@ in
     vlc
     loupe
     lollypop
+    nicotine-plus
 
     # messengers (i use them all, mostly)
     signal-desktop
