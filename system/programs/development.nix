@@ -12,6 +12,11 @@
     vscodium-fhs
     nixfmt-rfc-style
     sqlitebrowser
+
+    # nix coding tools
+    nil
+    deadnix
+    statix
   ];
 
   virtualisation.docker = {
