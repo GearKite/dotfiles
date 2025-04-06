@@ -4,6 +4,6 @@
     terminal = "${pkgs.alacritty}/bin/alacritty";
     #browser = "${pkgs.librewolf}/bin/librewolf"; # doesn't work with apparmor for some reason
     browser = "librewolf";
-    filemanager = "${pkgs.gnome.nautilus}/bin/nautilus";
+    filemanager = "${pkgs.nautilus}/bin/nautilus";
   };
 }
