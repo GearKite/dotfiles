@@ -35,6 +35,7 @@ in
     loupe
     lollypop
     nicotine-plus
+    picard
 
     # messengers (i use them all, mostly)
     signal-desktop
