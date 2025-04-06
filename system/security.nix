@@ -34,37 +34,37 @@
     enable = true;
     extraRules = [
       {
-      commands = [
-        {
-          command = "${pkgs.ddcutil}/bin/ddcutil";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/ddcutil";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "${pkgs.systemd}/bin/halt";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/halt";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-      groups = [ "wheel" ];
+        commands = [
+          {
+            command = "${pkgs.ddcutil}/bin/ddcutil";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/ddcutil";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "${pkgs.systemd}/bin/halt";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/halt";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
       }
     ];
     extraConfig = with pkgs; ''
       Defaults:picloud secure_path="${
         lib.makeBinPath [
-        ddcutil
+          ddcutil
         ]
       }:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
     '';
   };
 
-  programs.seahorse.enable = true;
+  programs.ssh.askPassword = "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
 
   security.pam.services.hyprlock = { };
 
