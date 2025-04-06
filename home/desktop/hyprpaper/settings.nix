@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   wallpaper-file = "${pkgs.hyprland}/share/hypr/wall2.png";
 in
@@ -8,8 +8,7 @@ in
     splash = true;
     splash_offset = 2.0;
 
-    preload =
-      [ wallpaper-file ];
+    preload = [ wallpaper-file ];
 
     wallpaper = [
       ", ${wallpaper-file}"

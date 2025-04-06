@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+_:
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
@@ -16,5 +16,5 @@
       "float, class:pavucontrol"
       "size > >, class:pavucontrol"
     ];
-   };
+  };
 }

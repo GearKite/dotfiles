@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
-  constants = import ../../constants.nix { pkgs = pkgs; };
+  constants = import ../../constants.nix { inherit pkgs; };
 in
 {
   wayland.windowManager.hyprland.settings = {

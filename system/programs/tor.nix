@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+_: {
   services.tor = {
     enable = true;
     openFirewall = false;

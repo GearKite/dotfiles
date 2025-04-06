@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+_:
 {
   programs.waybar.settings = {
     mainBar = {

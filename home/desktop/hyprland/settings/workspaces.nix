@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+_:
 {
   wayland.windowManager.hyprland.settings = {
     "$monitor1" = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G27Q 21502B003480";

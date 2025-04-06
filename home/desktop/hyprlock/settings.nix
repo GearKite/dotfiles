@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+_:
 {
   programs.hyprlock.settings = {
     background = {

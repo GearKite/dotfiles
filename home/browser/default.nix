@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   lock-false = {
     Value = false;
@@ -51,7 +51,7 @@ in
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
           installation_mode = "force_installed";
         };
-        # 
+        #
         # DuckDuckGo Privacy Essentials
         "jid1-ZAdIEUB7XOzOJw@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";

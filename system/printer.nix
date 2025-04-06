@@ -1,19 +1,27 @@
-{ config, lib, pkgs, ... }: {
+{
+  pkgs,
+  ...
+}:
+{
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = [ pkgs.brlaser ];
+    drivers = [
+      pkgs.brlaser
+    ];
   };
 
   hardware.sane = {
     enable = true; # enables support for SANE scanners
     extraBackends = [ pkgs.sane-airscan ];
 
-
     brscan4 = {
       enable = true;
       netDevices = {
-        home = { model = "DCP-L2550DN"; ip = "192.168.50.3"; };
+        home = {
+          model = "DCP-L2550DN";
+          ip = "192.168.50.3";
+        };
       };
     };
 

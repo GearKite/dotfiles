@@ -7,8 +7,7 @@
     enable = true;
     allowedTCPPorts = [ ];
 
-    interfaces =
-      {
+    interfaces = {
         "zt+" = {
           allowedTCPPorts = [ 22 ];
           allowedUDPPorts = [ ];
@@ -28,12 +27,6 @@
 
   services.i2p = {
     enable = true;
-    # TCP & UDP
-    #port = 33692;
-    # TCP
-    #ntcp2.port = 34555;
-    #enableIPv4 = true;
-    #enableIPv6 = true;
   };
 
   environment.systemPackages = with pkgs; [

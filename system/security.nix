@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
@@ -31,7 +32,8 @@
 
   security.sudo = {
     enable = true;
-    extraRules = [{
+    extraRules = [
+      {
       commands = [
         {
           command = "${pkgs.ddcutil}/bin/ddcutil";
@@ -51,11 +53,14 @@
         }
       ];
       groups = [ "wheel" ];
-    }];
+      }
+    ];
     extraConfig = with pkgs; ''
-      Defaults:picloud secure_path="${lib.makeBinPath [
+      Defaults:picloud secure_path="${
+        lib.makeBinPath [
         ddcutil
-      ]}:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
+        ]
+      }:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
     '';
   };
 

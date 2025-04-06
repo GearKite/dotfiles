@@ -29,7 +29,11 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" "direnv" ];
+      plugins = [
+        "git"
+        "thefuck"
+        "direnv"
+      ];
       theme = "agnoster";
     };
   };
