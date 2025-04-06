@@ -17,6 +17,7 @@
 
   environment.systemPackages = with pkgs; [
     ddcutil
+    jmtpfs
   ];
 
   fonts = {
@@ -45,4 +46,6 @@
   };
 
   services.fwupd.enable = true;
+
+  services.gvfs.enable = true;
 }
