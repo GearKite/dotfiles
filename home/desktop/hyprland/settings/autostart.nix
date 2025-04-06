@@ -13,14 +13,17 @@ in
       "systemctl --user start hypridle.service"
       "systemctl --user restart kanshi.service"
 
+      "gomuks"
+      "nicotine-plus --hidden"
+
       "[workspace 1 silent] ${constants.executable.browser}"
       "[workspace 2 silent] ${constants.executable.terminal}"
+      "[workspace 11 silent] thunderbird"
+      "[workspace 12 silent] qbittorrent"
+
       "[workspace 17 silent] simplex-chat-desktop"
       "[workspace 17 silent] cwtch"
-
-      "[workspace 11 silent] thunderbird"
-
-      "nextcloud --background"
+      "[workspace 18 silent] signal-desktop"
     ];
   };
 }
