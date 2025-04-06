@@ -1,22 +1,26 @@
-{ config, lib, pkgs, ... }: {
+{
+  pkgs,
+  ...
+}:
+{
   networking.networkmanager.enable = true;
 
   networking.hostName = "magma";
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ ];
+    allowedTCPPorts = [ 2234 ];
 
     interfaces = {
-        "zt+" = {
-          allowedTCPPorts = [ 22 ];
-          allowedUDPPorts = [ ];
-        };
-
-        "enp5s0" = {
-          allowedTCPPorts = [ 22 ];
-        };
+      "zt+" = {
+        allowedTCPPorts = [ 22 ];
+        allowedUDPPorts = [ ];
       };
+
+      "enp5s0" = {
+        allowedTCPPorts = [ 22 ];
+      };
+    };
   };
 
   services.avahi = {
