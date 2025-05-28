@@ -7,7 +7,6 @@ let
     config = {
       permittedInsecurePackages = [
         "olm-3.2.16"
-        "fluffychat-linux-1.25.1"
       ];
     };
   };
@@ -42,7 +41,6 @@ in
     unstable.element-desktop
     simplex-chat-desktop
     unstable.cwtch-ui
-    unstable.fluffychat
     gomuksFromFlake
 
     # utils & misc
