@@ -15,6 +15,9 @@
     nil
     deadnix
     statix
+
+    # android
+    scrcpy
   ];
 
   virtualisation.docker = {
