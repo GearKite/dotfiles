@@ -48,7 +48,6 @@ in
     (openai-whisper-cpp.override {
       cudaSupport = true; # Enable CUDA support
     })
-    unstable.mcpelauncher-ui-qt
     distrobox
     qgis
     qalculate-gtk
@@ -57,6 +56,10 @@ in
       # Give JOSM a bit more RAM (hopefully it's enough :sob:)
       extraJavaOpts = "-Xmx32G";
     })
+
+    # SDR
+    unstable.sdrpp
+    unstable.satdump
   ];
 
   nixpkgs.overlays = [
