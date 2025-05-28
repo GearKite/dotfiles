@@ -35,6 +35,7 @@ in
     lollypop
     nicotine-plus
     picard
+    unstable.lrcget
 
     # messengers (i use them all, mostly)
     signal-desktop
