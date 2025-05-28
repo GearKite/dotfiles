@@ -16,19 +16,9 @@ in
     policies = {
       # Extensions
       ExtensionSettings = {
-        # Absolute Enable Right Click & Copy
-        "{9350bc42-47fb-4598-ae0f-825e3dd9ceba}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/absolute-enable-right-click/latest.xpi";
-          installation_mode = "force_installed";
-        };
         # Bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-          installation_mode = "force_installed";
-        };
-        # ClearURLs
-        "CanvasBlocker@kkapsner.de" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/latest.xpi";
           installation_mode = "force_installed";
         };
         # ClearURLs
@@ -51,7 +41,6 @@ in
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
           installation_mode = "force_installed";
         };
-        #
         # DuckDuckGo Privacy Essentials
         "jid1-ZAdIEUB7XOzOJw@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";
@@ -60,11 +49,6 @@ in
         # Font Fingerprint Defender
         "{96ef5869-e3ba-4d21-b86e-21b163096400}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/font-fingerprint-defender/latest.xpi";
-          installation_mode = "force_installed";
-        };
-        # NoScript
-        "{73a6fe31-595d-460b-a920-fcc0f8843232}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/noscript/latest.xpi";
           installation_mode = "force_installed";
         };
         # PeerTube Companion
@@ -92,17 +76,12 @@ in
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/videospeed/latest.xpi";
           installation_mode = "force_installed";
         };
-        # Wappalyzer
-        "wappalyzer@crunchlabz.com" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
-          installation_mode = "force_installed";
-        };
       };
 
       # Preferences
       Preferences = {
         "privacy.donottrackheader.enabled" = lock-true;
-        "webgl.disabled" = lock-false;
+        "webgl.disabled" = lock-true;
         "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = lock-true;
       };
     };
