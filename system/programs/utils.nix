@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     pv
     ncdu
@@ -8,9 +9,14 @@
     dig
     whois
     file
-    htop
+    btop
     wget
-    ncdu
+    fastfetch
+    lm_sensors
+    zip
+    unzip
+    brightnessctl
+    syncthing
   ];
 
 }
