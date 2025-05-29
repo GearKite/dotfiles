@@ -56,6 +56,7 @@ in
       # Give JOSM a bit more RAM (hopefully it's enough :sob:)
       extraJavaOpts = "-Xmx32G";
     })
+    logseq
 
     # SDR
     unstable.sdrpp
