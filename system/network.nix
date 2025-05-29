@@ -18,7 +18,13 @@
       };
 
       "enp5s0" = {
-        allowedTCPPorts = [ 22 ];
+        allowedTCPPorts = [
+          22
+          50080
+          3100
+          8191
+          8080
+        ];
       };
     };
   };
