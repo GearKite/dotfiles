@@ -21,6 +21,7 @@ in
     easyeffects
     qjackctl
     unstable.kdePackages.kdenlive
+    unstable.jellyfin-mpv-shim
   ];
 
   # OBS virtual cam
