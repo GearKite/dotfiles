@@ -22,6 +22,7 @@ in
     qjackctl
     unstable.kdePackages.kdenlive
     unstable.jellyfin-mpv-shim
+    unstable.audacity
   ];
 
   # OBS virtual cam
