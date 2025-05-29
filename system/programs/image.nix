@@ -7,11 +7,12 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    unstable.gimp
-    krita
+    unstable.gimp3
+    unstable.krita
     darktable
     imagemagick
     exiftool
+    unstable.inkscape
   ];
 
 }
