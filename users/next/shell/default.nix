@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-  homeConfig = config.home-manager.users.${config.modules.username};
+  homeConfig = config.home-manager.users.next;
 in
 {
-  home-manager.users.${config.modules.username} = {
+  home-manager.users.next = {
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -42,4 +42,7 @@ in
       };
     };
   };
+
+  programs.zsh.enable = true;
+  users.users.next.shell = pkgs.zsh;
 }

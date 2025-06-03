@@ -5,39 +5,17 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  programs.hyprland.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "lv";
-      variant = "";
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     ddcutil
     jmtpfs
   ];
 
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      twemoji-color-font
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-      font-awesome
-      material-design-icons
-    ];
-    fontDir.enable = true;
-
+  # graphical pinentry
+  programs.ssh.askPassword = "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-tty;
+    enableSSHSupport = true;
   };
 
   # For ddcutil

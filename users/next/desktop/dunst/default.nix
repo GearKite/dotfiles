@@ -1,6 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${config.modules.username} = {
+  home-manager.users.next = {
     imports = [
       ./settings.nix
     ];

@@ -1,7 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${config.modules.username} = {
+  programs.hyprland.enable = true;
+
+  home-manager.users.next = {
     imports = [
+      ./theme.nix
+
       ./settings/animations.nix
       ./settings/autostart.nix
       ./settings/binds.nix
@@ -29,5 +33,43 @@
       # Whether to enable hyprland-session.target on hyprland startup
       systemd.enable = true;
     };
+
+    home.packages = with pkgs; [
+      # Media controls
+      pavucontrol
+      playerctl
+      # Screenshots
+      hyprshot
+      satty
+      # Clipboard history
+      cliphist
+      wl-clipboard
+    ];
+  };
+
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "${pkgs.ddcutil}/bin/ddcutil";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/ddcutil";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
+    extraConfig = with pkgs; ''
+      Defaults:picloud secure_path="${
+        lib.makeBinPath [
+          ddcutil
+        ]
+      }:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
+    '';
   };
 }

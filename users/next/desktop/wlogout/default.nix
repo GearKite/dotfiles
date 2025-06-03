@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  home-manager.users.${config.modules.username} = {
+  home-manager.users.next = {
     imports = [
       ./layout.nix
     ];
@@ -11,13 +11,36 @@
       style = ./style.css;
     };
 
-    home.file."${config.home-manager.users.${config.modules.username}.xdg.configHome}/wlogout/icons" = {
+    home.file."${config.home-manager.users.next.xdg.configHome}/wlogout/icons" = {
       source = ./icons;
     };
 
-    home.file."${config.home-manager.users.${config.modules.username}.xdg.configHome}/wlogout/scripts" =
+    home.file."${config.home-manager.users.next.xdg.configHome}/wlogout/scripts" = {
+      source = ./scripts;
+    };
+
+    home.packages = with pkgs; [
+      jq # logout script
+    ];
+
+  };
+
+  security.sudo = {
+    enable = true;
+    extraRules = [
       {
-        source = ./scripts;
-      };
+        commands = [
+          {
+            command = "${pkgs.systemd}/bin/halt";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/halt";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
   };
 }

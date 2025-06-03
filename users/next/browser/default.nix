@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   lock-true = {
     Value = true;
@@ -6,7 +6,7 @@ let
   };
 in
 {
-  home-manager.users.${config.modules.username}.programs.firefox = {
+  home-manager.users.next.programs.firefox = {
     enable = true;
     package = pkgs.librewolf; # programs.librewolf doesn't (yet) support policies
     policies = {
@@ -79,6 +79,24 @@ in
         "privacy.donottrackheader.enabled" = lock-true;
         "webgl.disabled" = lock-true;
         "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = lock-true;
+      };
+    };
+  };
+
+  programs.firejail = {
+    enable = true;
+    wrappedBinaries = {
+      librewolf = {
+        executable = "${pkgs.librewolf}/bin/librewolf";
+        profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
+        extraArgs = [
+          # Required for U2F USB stick
+          "--ignore=private-dev"
+          # Enforce dark mode
+          "--env=GTK_THEME=Adwaita:dark"
+          # Enable system notifications
+          "--dbus-user.talk=org.freedesktop.Notifications"
+        ];
       };
     };
   };

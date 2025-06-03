@@ -1,6 +1,5 @@
-_: {
-  time.timeZone = "Europe/Riga";
-
+{ lib, ... }:
+{
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -15,4 +14,6 @@ _: {
     LC_TIME = "lv_LV.UTF-8";
   };
 
+  time.timeZone = lib.mkDefault "Europe/Riga";
+  services.automatic-timezoned.enable = true;
 }

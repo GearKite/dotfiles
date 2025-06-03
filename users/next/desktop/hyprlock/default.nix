@@ -1,6 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${config.modules.username} = {
+  home-manager.users.next = {
     imports = [
       ./settings.nix
     ];
@@ -10,4 +10,6 @@
       package = pkgs.hyprlock;
     };
   };
+  programs.hyprlock.enable = true;
+  security.pam.services.hyprlock = { };
 }

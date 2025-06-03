@@ -1,6 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${config.modules.username}.home.packages = with pkgs; [
+  home-manager.users.next.home.packages = with pkgs; [
     pv
     ncdu
     coreutils-full

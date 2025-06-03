@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./alacritty
     ./dunst
     ./fuzzel
     ./hypridle
@@ -11,8 +10,5 @@
     ./kanshi
     ./waybar
     ./wlogout
-
-    ./dependencies.nix
-    ./theme.nix
   ];
 }

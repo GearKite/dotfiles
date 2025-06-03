@@ -1,13 +1,9 @@
-{ config, lib, ... }:
 {
-  options.modules.username = lib.mkOption {
-    type = lib.types.str;
-    default = "next";
-    readOnly = true;
-  };
-
+  ...
+}:
+{
   config = {
-    users.users.${config.modules.username} = {
+    users.users.next = {
       isNormalUser = true;
 
       extraGroups = [
@@ -21,17 +17,16 @@
       ];
     };
 
-    #home-manager.users.next = {
-    #  home.stateVersion = stateVersion;
-    #  #imports = [outputs.homeConfigurations.next.config];
-    #};
-
-    home-manager.users.next = ./home.nix;
+    home-manager.users.next = {
+      home.stateVersion = "24.05";
+      programs.home-manager.enable = true;
+    };
 
     programs.adb.enable = true;
   };
 
   imports = [
+    ./alacritty
     ./browser
     ./desktop
     ./shell

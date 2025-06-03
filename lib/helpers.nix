@@ -23,28 +23,10 @@
           ;
         unstable = import inputs.nixpkgs { inherit system; };
       };
-      modules = [ ../hosts ];
-    };
-
-  mkHome =
-    {
-      username,
-      system ? "x86_64-linux",
-      configurations,
-    }:
-    inputs.home-manager.lib.homeManagerConfiguration {
-      modules = [ ../users ];
-      pkgs = import inputs.nixpkgs { inherit system; };
-      extraSpecialArgs = {
-        inherit
-          inputs
-          outputs
-          username
-          system
-          stateVersion
-          configurations
-          ;
-      };
+      modules = [
+        ../hosts
+        ./unfree.nix
+      ];
     };
 
   forAllSystems = inputs.nixpkgs.lib.genAttrs [

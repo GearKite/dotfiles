@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -36,7 +37,7 @@
     nvidiaSettings = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = lib.mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   environment.systemPackages = with pkgs; [
@@ -44,4 +45,33 @@
   ];
 
   hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.enableNvidia = true; # deprecated, but '--gpus' doesn't work without this
+
+  allowed-unfree = [
+    # Nvidia (why so many!?) - fuck nvidia
+    "nvidia-x11"
+    "cuda_cccl"
+    "cuda_cudart"
+    "libcublas"
+    "cuda_nvcc"
+    "cuda-merged"
+    "cuda_cuobjdump"
+    "cuda_gdb"
+    "cuda_nvdisasm"
+    "cuda_nvprune"
+    "cuda_cupti"
+    "cuda_cuxxfilt"
+    "cuda_nvml_dev"
+    "cuda_nvrtc"
+    "cuda_nvtx"
+    "cuda_profiler_api"
+    "cuda_sanitizer_api"
+    "libcufft"
+    "libcurand"
+    "libcusolver"
+    "libnvjitlink"
+    "libcusparse"
+    "libnpp"
+    "nvidia-persistenced"
+  ];
 }

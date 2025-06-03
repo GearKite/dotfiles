@@ -1,10 +1,9 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
-  home-manager.users.${config.modules.username}.home.packages = with pkgs; [
+  home-manager.users.next.home.packages = with pkgs; [
     git
     vscodium-fhs
     sqlitebrowser
@@ -20,4 +19,6 @@
   ];
 
   programs.direnv.enable = true;
+
+  programs.mtr.enable = true;
 }

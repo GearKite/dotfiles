@@ -1,11 +1,10 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }:
 {
-  home-manager.users.${config.modules.username} = {
+  home-manager.users.next = {
     home.packages = with pkgs; [
       # browsers
       tor-browser
@@ -58,5 +57,9 @@
     services.kdeconnect = {
       enable = true;
     };
+  };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 2234 ];
   };
 }

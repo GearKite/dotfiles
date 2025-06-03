@@ -1,7 +1,7 @@
 { config, ... }:
 {
   imports = [
-    ../../constants.nix
+    ../../../constants.nix
   ];
 
   wayland.windowManager.hyprland.settings = {

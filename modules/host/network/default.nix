@@ -1,32 +1,14 @@
 {
   pkgs,
+  hostname,
   ...
 }:
 {
   networking.networkmanager.enable = true;
-
-  networking.hostName = "magma";
+  networking.hostName = hostname;
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 2234 ];
-
-    interfaces = {
-      "zt+" = {
-        allowedTCPPorts = [ 22 ];
-        allowedUDPPorts = [ ];
-      };
-
-      "enp5s0" = {
-        allowedTCPPorts = [
-          22
-          50080
-          3100
-          8191
-          8080
-        ];
-      };
-    };
   };
 
   services.avahi = {
