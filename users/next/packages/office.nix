@@ -28,11 +28,9 @@
       picard
       lrcget
 
-      # messengers (i use them all, mostly)
+      # messengers
       signal-desktop
       element-desktop
-      simplex-chat-desktop
-      cwtch-ui
       inputs.gomuks.packages.${pkgs.system}.gomuks
 
       # utils & misc
