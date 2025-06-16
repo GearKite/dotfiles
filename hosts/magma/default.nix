@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ ... }:
 {
   imports = [
     ../../users/next
