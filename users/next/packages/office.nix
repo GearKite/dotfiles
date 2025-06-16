@@ -60,4 +60,10 @@
   networking.firewall = {
     allowedTCPPorts = [ 2234 ];
   };
+
+  services.zerotierone = {
+    enable = true;
+  };
+
+  allowed-unfree = [ "zerotierone" ]; # :(
 }
