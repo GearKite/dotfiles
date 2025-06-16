@@ -31,12 +31,14 @@
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
       "https://pre-commit-hooks.cachix.org"
+      "https://value11.cachix.org"
     ];
     extra-trusted-public-keys = [
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
+      "value11.cachix.org-1:3zKRUHEEu2wzUOKxiEAm8t5iH+tDUKjfSpoRpnp7yPI="
     ];
   };
 
