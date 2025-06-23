@@ -8,10 +8,14 @@
   environment.systemPackages = with pkgs; [
     ddcutil
     jmtpfs
+    kdePackages.ksshaskpass
   ];
 
   # graphical pinentry
-  programs.ssh.askPassword = "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
+  programs.ssh = {
+    enableAskPassword = true;
+    askPassword = "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
+  };
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-tty;
