@@ -8,5 +8,7 @@
     spiceUSBRedirection.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   hardware.graphics.enable = true;
 }
