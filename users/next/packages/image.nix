@@ -6,7 +6,7 @@
   home-manager.users.next.home.packages = with pkgs; [
     gimp3
     krita
-    darktable
+    #darktable
     imagemagick
     exiftool
     inkscape

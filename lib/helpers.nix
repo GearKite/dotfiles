@@ -21,7 +21,10 @@
           stateVersion
           configurations
           ;
-        unstable = import inputs.nixpkgs { inherit system; };
+        stable = import inputs.nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
       };
       modules = [
         ../hosts

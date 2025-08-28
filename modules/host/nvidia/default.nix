@@ -1,7 +1,7 @@
 {
-  config,
   pkgs,
   lib,
+  stable,
   ...
 }:
 {
@@ -37,7 +37,7 @@
     nvidiaSettings = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = lib.mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
+    package = lib.mkDefault stable.pkgs.linuxPackages.nvidiaPackages.beta;
   };
 
   environment.systemPackages = with pkgs; [
