@@ -44,7 +44,6 @@
 
   home.packages = with pkgs; [
     hyprcursor
-    catppuccin-qt5ct
-    libsForQt5.qt5ct
+    catppuccin
   ];
 }

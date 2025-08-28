@@ -18,7 +18,6 @@
     easyeffects
     qjackctl
     kdePackages.kdenlive
-    jellyfin-mpv-shim
     audacity
   ];
 
