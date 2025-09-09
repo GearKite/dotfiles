@@ -46,6 +46,7 @@
         extraJavaOpts = "-Xmx32G";
       })
       logseq
+      nautilus
 
       # SDR
       sdrpp
