@@ -14,6 +14,7 @@
         "adbusers"
         "scanner"
         "lp"
+        "dialout"
       ];
     };
 
