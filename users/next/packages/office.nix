@@ -51,6 +51,9 @@
       # SDR
       sdrpp
       satdump
+
+      # games
+      prismlauncher
     ];
 
     services.kdeconnect = {
