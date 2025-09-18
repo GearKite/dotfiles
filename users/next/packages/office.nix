@@ -32,6 +32,7 @@
       signal-desktop
       element-desktop
       inputs.gomuks.packages.${pkgs.system}.gomuks
+      dino
 
       # utils & misc
       (openai-whisper-cpp.override {
