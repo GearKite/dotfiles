@@ -71,4 +71,6 @@
   };
 
   allowed-unfree = [ "zerotierone" ]; # :(
+
+  virtualisation.waydroid.enable = true;
 }
