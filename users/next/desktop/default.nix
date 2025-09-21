@@ -10,5 +10,7 @@
     ./kanshi
     ./waybar
     ./wlogout
+
+    ./default-apps.nix
   ];
 }

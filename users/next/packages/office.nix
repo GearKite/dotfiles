@@ -22,7 +22,7 @@
         scripts = [ mpvScripts.mpris ];
       })
       vlc
-      loupe
+      oculante
       lollypop
       nicotine-plus
       picard
