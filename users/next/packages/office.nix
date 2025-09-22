@@ -29,7 +29,17 @@
       lrcget
 
       # messengers
-      signal-desktop
+      (signal-desktop.overrideAttrs (oldAttrs: {
+        patches = [ ./custom/signal-desktop.patch ];
+        # build fails without replacing pnpm deps hash
+        pnpmDeps = pnpm.fetchDeps {
+          inherit (oldAttrs) pname src version;
+          fetcherVersion = 1;
+          hash = "sha256-uVVUHvYhBCplKPyuS2+PKCxox8uWU2E/2EXLCG1ot54=";
+        };
+
+      }))
+
       element-desktop
       inputs.gomuks.packages.${pkgs.system}.gomuks
       dino
