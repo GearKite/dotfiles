@@ -108,6 +108,7 @@
             git
             direnv
             ssh-to-age
+            cachix
           ];
         };
       }
