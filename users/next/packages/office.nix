@@ -25,7 +25,10 @@
       oculante
       lollypop
       nicotine-plus
-      picard
+      (picard.overrideAttrs (oldAttrs: {
+        preFixup = oldAttrs.preFixup + ''makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})'';
+      }))
+
       lrcget
 
       # messengers
