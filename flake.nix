@@ -98,7 +98,13 @@
               markdownlint.enable = true;
             };
           };
-        };
+        }
+        // builtins.listToAttrs (
+          map (name: {
+            name = "host-${name}";
+            value = self.nixosConfigurations.${name}.config.system.build.toplevel;
+          }) hostConfigurations
+        );
 
         devShells.default = pkgs.mkShell {
           buildInputs = self.checks.${system}.pre-commit.enabledPackages;
