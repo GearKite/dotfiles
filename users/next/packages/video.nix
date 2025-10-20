@@ -17,7 +17,6 @@
     ffmpeg-full
     easyeffects
     qjackctl
-    kdePackages.kdenlive
     audacity
   ];
 

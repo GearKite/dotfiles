@@ -8,27 +8,20 @@
     home.packages = with pkgs; [
       # browsers
       tor-browser
-      brave
       ungoogled-chromium
 
       # internet
       thunderbird
-      nextcloud-client
       monero-gui
       qbittorrent
 
       # media
-      (mpv.override {
-        scripts = [ mpvScripts.mpris ];
-      })
-      vlc
+      mpv
       oculante
-      lollypop
       nicotine-plus
       (picard.overrideAttrs (oldAttrs: {
         preFixup = oldAttrs.preFixup + ''makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})'';
       }))
-
       lrcget
 
       # messengers
@@ -42,17 +35,11 @@
         };
 
       }))
-
       element-desktop
       inputs.gomuks.packages.${pkgs.system}.gomuks
-      dino
 
       # utils & misc
-      (openai-whisper-cpp.override {
-        cudaSupport = true; # Enable CUDA support
-      })
       distrobox
-      qgis
       qalculate-gtk
       onlyoffice-bin_latest
       (josm.override {
@@ -63,11 +50,7 @@
       nautilus
 
       # SDR
-      sdrpp
       satdump
-
-      # games
-      prismlauncher
     ];
 
     services.kdeconnect = {
@@ -84,6 +67,4 @@
   };
 
   allowed-unfree = [ "zerotierone" ]; # :(
-
-  virtualisation.waydroid.enable = true;
 }
