@@ -56,6 +56,14 @@
     services.kdeconnect = {
       enable = true;
     };
+
+    services.jellyfin-mpv-shim = {
+      enable = true;
+    };
+
+    services.etesync-dav = {
+      enable = true;
+    };
   };
 
   networking.firewall = {
