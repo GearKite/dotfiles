@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  system,
   ...
 }:
 {
@@ -36,7 +37,7 @@
 
       }))
       element-desktop
-      inputs.gomuks.packages.${pkgs.system}.gomuks
+      inputs.gomuks.packages.${system}.gomuks
 
       # utils & misc
       distrobox
