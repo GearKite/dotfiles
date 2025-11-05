@@ -32,7 +32,7 @@
         pnpmDeps = pnpm.fetchDeps {
           inherit (oldAttrs) pname src version;
           fetcherVersion = 1;
-          hash = "sha256-9YvNs925xBUYEpF429rHfMXIGPapVYd8j1jZa/yBuhA=";
+          hash = "sha256-b13di3TdaS6CT8gAZfBqlu4WheIHL+X8LvAo148H8kI=";
         };
 
       }))
