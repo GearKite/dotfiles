@@ -41,7 +41,7 @@
       # utils & misc
       distrobox
       qalculate-gtk
-      onlyoffice-bin_latest
+      onlyoffice-desktopeditors
       (josm.override {
         # Give JOSM a bit more RAM (hopefully it's enough :sob:)
         extraJavaOpts = "-Xmx32G";
