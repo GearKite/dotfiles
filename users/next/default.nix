@@ -30,6 +30,7 @@
     ./alacritty
     ./browser
     ./desktop
+    ./editor
     ./shell
 
     ./packages/development.nix

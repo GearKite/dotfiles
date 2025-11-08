@@ -24,6 +24,11 @@
       url = "github:gearkite/gomuks/flake-package";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -83,6 +88,13 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
         };
+
+        nixvim' = inputs.nixvim.legacyPackages.${system};
+
+        nixvim = nixvim'.makeNixvimWithModule {
+          inherit pkgs;
+          module = ./modules/nixvim;
+        };
       in
       {
         checks = {
@@ -117,6 +129,8 @@
             cachix
           ];
         };
+
+        packages = { inherit nixvim; };
       }
     );
 }
