@@ -85,5 +85,33 @@ _: {
       ];
     }
 
+    {
+      profile.outputs = [
+        {
+          criteria = "eDP-1";
+          mode = "1920x1080@60";
+          position = "0,0";
+          status = "enable";
+          scale = 1.0;
+        }
+      ];
+    }
+
+    {
+      profile.outputs = [
+        {
+          criteria = "eDP-1";
+          mode = "1920x1080@60";
+          position = "0,0";
+          status = "enable";
+          scale = 1.0;
+        }
+        {
+          criteria = "HDMI-A-1";
+          status = "enable";
+        }
+      ];
+    }
+
   ];
 }
