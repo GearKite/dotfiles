@@ -26,6 +26,7 @@ _: {
         "tray"
         "mpd"
         "pulseaudio"
+        "bluetooth"
         "network"
         "keyboard-state"
         "battery"
