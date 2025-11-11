@@ -285,6 +285,7 @@ window#waybar.empty #window {
     color: @textcolor2;
     border-radius: 15px;
     margin: 10px 15px 10px 0px;
+    padding: 5px;
 }
 
 #bluetooth.off {
@@ -303,6 +304,7 @@ window#waybar.empty #window {
     color: @textcolor2;
     border-radius: 15px;
     margin: 10px 15px 10px 0px;
+    padding: 5px;
 }
 
 #battery.charging,
