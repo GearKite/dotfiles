@@ -8,6 +8,7 @@
 
     ../../modules/host/bluetooth
     ../../modules/host/nvidia
+    ../../modules/host/laptop
     ../../modules/host/ssh
     ../../modules/host/tor
     ../../modules/host/virtualisation
