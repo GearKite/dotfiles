@@ -16,9 +16,11 @@
         cpp = [ "clang_format" ];
         javascript = {
           __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
           timeout_ms = 2000;
-          stop_after_first = true;
+        };
+        json = {
+          __unkeyed-1 = "prettierd";
+          timeout_ms = 2000;
         };
         nix = [
           "nixfmt"
@@ -35,6 +37,9 @@
       notify_on_error = true;
       notify_no_formatters = true;
       formatters = {
+        prettierd = {
+          command = lib.getExe pkgs.prettierd;
+        };
         deadnix = {
           command = lib.getExe pkgs.deadnix;
           stdin = false;
