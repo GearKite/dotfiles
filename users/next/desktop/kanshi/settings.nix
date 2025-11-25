@@ -10,9 +10,11 @@ _: {
           status = "enable";
         }
         {
-          criteria = "LG Electronics L194WT 0x000627AF";
-          mode = "1440x900@59.887";
-          position = "2560,540";
+          criteria = "Invalid Vendor Codename - RTK 0x1366 0x13660768";
+          mode = "1366x768@59.82900";
+          position = "-768,-592";
+          scale = 1.0;
+          transform = "90";
           status = "enable";
         }
       ];
