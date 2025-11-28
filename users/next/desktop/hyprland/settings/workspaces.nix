@@ -1,7 +1,7 @@
 _: {
   wayland.windowManager.hyprland.settings = {
     "$monitor1" = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G27Q 21502B003480";
-    "$monitor2" = "desc:LG Electronics L194WT 0x000627AF";
+    "$monitor2" = "desc:Invalid Vendor Codename - RTK 0x1366 0x13660768";
 
     workspace = [
       "1, monitor:$monitor1, default:true"

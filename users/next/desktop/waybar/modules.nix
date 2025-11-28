@@ -100,7 +100,7 @@ _: {
       network = {
         format = "{ifname}";
         format-wifi = "{icon}";
-        format-ethernet = " ";
+        format-ethernet = "";
         format-disconnected = "󰌙"; # An empty format will hide the module.
         tooltip-format = " {ifname} via {gwaddri}";
         tooltip-format-wifi = "   {essid} ({signalStrength}%)";
@@ -120,14 +120,15 @@ _: {
       # Battery
       battery = {
         states = {
-          # "good"= 95;
+          good = 60;
           warning = 30;
           critical = 15;
         };
-        format = "{icon}";
-        format-charging = "";
-        format-plugged = "";
-        format-alt = "{icon}  {percentage}%  {time}";
+        full-at = 80;
+        format = "{icon} {capacity}%";
+        format-charging = " {capacity}%";
+        format-plugged = " {capacity}%";
+        format-alt = "{icon}  {capacity}%  {time}";
         # "format-good"= ""; # An empty format will hide the module
         # "format-full"= "";
         format-icons = [
@@ -157,7 +158,7 @@ _: {
           car = "";
           default = [
             ""
-            " "
+            ""
             " "
           ];
         };
@@ -166,11 +167,15 @@ _: {
 
       # Bluetooth
       bluetooth = {
-        format-disabled = "";
-        format-off = "";
+        format = "󰂳 {status}";
+        format-on = "󰂯";
+        format-connected = "󰂱";
+        format-disabled = "󰂲";
+        format-off = "󰂲";
         interval = 30;
         on-click = "blueman-manager";
         format-no-controller = "";
+        tooltip-format = "{device_alias} {num_connections} {status}";
       };
 
       # Other
