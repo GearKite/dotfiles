@@ -52,6 +52,8 @@
 
       # SDR
       satdump
+
+      prismlauncher
     ];
 
     services.kdeconnect = {
