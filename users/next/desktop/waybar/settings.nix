@@ -13,7 +13,7 @@ _: {
 
       output = [
         "eDP-1"
-        "DP-2"
+        "DP-1"
       ];
 
       modules-left = [
@@ -46,7 +46,7 @@ _: {
       spacing = 4; # Gaps between modules (4px)
       # Choose the order of the modules
 
-      output = [ "DP-1" ];
+      output = [ "DP-2" ];
 
       modules-center = [
         "hyprland/workspaces"
