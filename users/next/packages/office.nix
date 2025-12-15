@@ -1,7 +1,5 @@
 {
   pkgs,
-  inputs,
-  system,
   ...
 }:
 {
@@ -37,7 +35,7 @@
 
       }))
       element-desktop
-      inputs.gomuks.packages.${system}.gomuks
+      gomuks-web
 
       # utils & misc
       distrobox
@@ -68,6 +66,10 @@
       enable = true;
     };
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16" # for gomuks
+  ];
 
   hardware.rtl-sdr.enable = true;
   boot.kernelParams = [ "modprobe.blacklist=dvb_usb_rtl28xxu" ]; # blacklist this module

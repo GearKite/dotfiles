@@ -20,9 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     blank.url = "github:divnix/blank";
-    gomuks = {
-      url = "github:gearkite/gomuks/flake-package";
-    };
     flake-utils.url = "github:numtide/flake-utils";
     nixvim = {
       url = "github:nix-community/nixvim";

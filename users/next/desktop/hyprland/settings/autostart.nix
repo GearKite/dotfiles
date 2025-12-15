@@ -14,7 +14,7 @@
       "systemctl --user start hypridle.service"
       "systemctl --user restart kanshi.service"
 
-      "gomuks"
+      "gomuks-web"
       "nicotine-plus --hidden"
 
       "[workspace 1 silent] ${config.modules.executable.browser}"
