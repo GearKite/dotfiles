@@ -77,7 +77,6 @@ in
       # Preferences
       Preferences = {
         "privacy.donottrackheader.enabled" = lock-true;
-        "webgl.disabled" = lock-true;
         "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = lock-true;
       };
     };
