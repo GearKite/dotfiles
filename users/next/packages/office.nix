@@ -74,6 +74,8 @@
     };
   };
 
+  services.flatpak.enable = true;
+
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16" # for gomuks
   ];
