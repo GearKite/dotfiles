@@ -15,7 +15,6 @@
       "systemctl --user restart kanshi.service"
 
       "gomuks-web"
-      "nicotine-plus --hidden"
 
       "[workspace 1 silent] ${config.modules.executable.browser}"
       "[workspace 2 silent] ${config.modules.executable.terminal}"

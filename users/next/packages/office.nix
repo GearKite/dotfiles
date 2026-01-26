@@ -17,7 +17,6 @@
       # media
       mpv
       oculante
-      nicotine-plus
       (picard.overrideAttrs (oldAttrs: {
         preFixup = oldAttrs.preFixup + ''makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})'';
       }))
