@@ -18,7 +18,7 @@
       mpv
       oculante
       (picard.overrideAttrs (oldAttrs: {
-        preFixup = oldAttrs.preFixup + ''makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})'';
+        preFixup = oldAttrs.preFixup + "makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})";
       }))
       lrcget
 
@@ -29,7 +29,7 @@
         pnpmDeps = pnpm.fetchDeps {
           inherit (oldAttrs) pname src version;
           fetcherVersion = 1;
-          hash = "sha256-EqDHhfpdnj4ZhTVnmVmyiRjTUIGX5fpdAsxqRY/tzQI=";
+          hash = "sha256-NWzGyoj1BafRe9LxLkhpWWjGaT0gfQGHnxYDMpvRLYE=";
         };
 
       }))
