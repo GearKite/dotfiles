@@ -46,6 +46,8 @@
       })
       logseq
       nautilus
+      qgis
+      sshfs
 
       # SDR
       satdump
