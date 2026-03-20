@@ -27,9 +27,13 @@
         patches = [ ./custom/signal-desktop.patch ];
         # build fails without replacing pnpm deps hash
         pnpmDeps = pnpm.fetchDeps {
-          inherit (oldAttrs) pname src version;
+          inherit (oldAttrs)
+            pname
+            src
+            version
+            ;
           fetcherVersion = 1;
-          hash = "sha256-sXDAAbrRFgOT+wRZqHAjEudmcUdBEbpkPWJpiB+MqDw=";
+          hash = "sha256-4Xlv4NQa1PK/onNuO3IUwGYqTB122/GrGDDSO8+hUpQ=";
         };
 
       }))

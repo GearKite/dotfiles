@@ -1,25 +1,25 @@
-From f750487745e8f13411b6db00bca9c3aca3ffd9b2 Mon Sep 17 00:00:00 2001
+From d7018f2b143bd0456bb57471c0408d24b94a97d3 Mon Sep 17 00:00:00 2001
 From: GearKite <onyx-commute-quit@duck.com>
-Date: Mon, 22 Sep 2025 17:08:30 +0300
-Subject: [PATCH] deleteForEveryone: always return
+Date: Fri, 20 Mar 2026 21:32:30 +0200
+Subject: [PATCH] return on receiveDeleteForEveryone
 
 ---
- ts/util/deleteForEveryone.preload.ts | 2 ++
- 1 file changed, 2 insertions(+)
+ ts/util/deleteForEveryone.preload.ts | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/ts/util/deleteForEveryone.preload.ts b/ts/util/deleteForEveryone.preload.ts
-index 00218328d..ab8ae7785 100644
+index b9aafb675..719c20e7a 100644
 --- a/ts/util/deleteForEveryone.preload.ts
 +++ b/ts/util/deleteForEveryone.preload.ts
-@@ -22,6 +22,8 @@ export async function deleteForEveryone(
+@@ -31,6 +31,7 @@ export async function receiveDeleteForEveryone(
    >,
-   shouldPersist = true
+   { shouldPersist = true }: { shouldPersist?: boolean } = {}
  ): Promise<void> {
 +  return;
-+
-   if (isDeletionByMe(message, doe)) {
-     const conversation = window.ConversationController.get(
-       message.get('conversationId')
+   const conversation = window.ConversationController.get(
+     message.get('conversationId')
+   );
 --
-2.51.0
+2.51.2
+
 
