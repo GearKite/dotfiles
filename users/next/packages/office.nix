@@ -1,5 +1,6 @@
 {
   pkgs,
+  unstable,
   ...
 }:
 {
@@ -21,9 +22,10 @@
         preFixup = oldAttrs.preFixup + "makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})";
       }))
       lrcget
+      unstable.tidal-hifi
 
       # messengers
-      (signal-desktop.overrideAttrs (oldAttrs: {
+      (unstable.signal-desktop.overrideAttrs (oldAttrs: {
         patches = [ ./custom/signal-desktop.patch ];
         # build fails without replacing pnpm deps hash
         pnpmDeps = pnpm.fetchDeps {
@@ -33,7 +35,7 @@
             version
             ;
           fetcherVersion = 1;
-          hash = "sha256-4Xlv4NQa1PK/onNuO3IUwGYqTB122/GrGDDSO8+hUpQ=";
+          hash = "sha256-Z2OKoa4MNwcTT1ip2g35koAtuR0ygpsI/en+gtk/jRw=";
         };
 
       }))

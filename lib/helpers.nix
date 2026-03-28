@@ -21,7 +21,7 @@
           stateVersion
           configurations
           ;
-        stable = import inputs.nixpkgs-stable {
+        unstable = import inputs.nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
         };
