@@ -68,10 +68,6 @@
       })
     ];
 
-    services.kdeconnect = {
-      enable = true;
-    };
-
     services.jellyfin-mpv-shim = {
       enable = true;
     };
@@ -80,6 +76,8 @@
       enable = true;
     };
   };
+
+  programs.kdeconnect.enable = true;
 
   services.flatpak.enable = true;
 
