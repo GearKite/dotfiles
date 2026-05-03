@@ -35,7 +35,7 @@
             version
             ;
           fetcherVersion = 1;
-          hash = "sha256-GQ5hNL3AjV/9xprEFE6pXQHY6iaO16j/BiMjyOdljJ4=";
+          hash = "sha256-XbAS16N1DEnw7mXRlpLH6ut+zt6ifzxVYeL4t9S21FQ=";
         };
 
       }))
