@@ -18,7 +18,15 @@
           __unkeyed-1 = "prettierd";
           timeout_ms = 2000;
         };
+        typescript = {
+          __unkeyed-1 = "prettierd";
+          timeout_ms = 2000;
+        };
         json = {
+          __unkeyed-1 = "prettierd";
+          timeout_ms = 2000;
+        };
+        jsonc = {
           __unkeyed-1 = "prettierd";
           timeout_ms = 2000;
         };
