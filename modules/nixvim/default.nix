@@ -1,5 +1,6 @@
 {
   imports = [
+    ./activitywatch
     ./autopairs
     ./comments
     ./core

@@ -75,6 +75,22 @@
     services.etesync-dav = {
       enable = true;
     };
+
+    services.activitywatch = {
+      enable = true;
+      watchers = {
+        awatcher = {
+          package = pkgs.awatcher;
+          settings = {
+            awatcher = {
+              idle-timeout-seconds = 180;
+              poll-time-idle-seconds = 4;
+              poll-time-window-seconds = 1;
+            };
+          };
+        };
+      };
+    };
   };
 
   programs.kdeconnect.enable = true;
