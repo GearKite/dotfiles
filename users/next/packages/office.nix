@@ -52,7 +52,15 @@
       })
       logseq
       nautilus
-      qgis
+
+      (qgis.overrideAttrs (oldAttrs: {
+        extraPythonPackages = [ pkgs.python3Packages.pillow ];
+        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
+          pkgs.opencl-headers
+          pkgs.ocl-icd
+        ];
+      }))
+
       sshfs
 
       # SDR
