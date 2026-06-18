@@ -25,20 +25,22 @@
       unstable.tidal-hifi
 
       # messengers
-      (unstable.signal-desktop.overrideAttrs (oldAttrs: {
-        patches = [ ./custom/signal-desktop.patch ];
-        # build fails without replacing pnpm deps hash
-        pnpmDeps = pnpm.fetchDeps {
-          inherit (oldAttrs)
-            pname
-            src
-            version
-            ;
-          fetcherVersion = 1;
-          hash = "sha256-XbAS16N1DEnw7mXRlpLH6ut+zt6ifzxVYeL4t9S21FQ=";
-        };
-
-      }))
+      signal-desktop
+      #(signal-desktop.overrideAttrs (oldAttrs: {
+      #  patches = [ ./custom/signal-desktop.patch ];
+      #  # build fails without replacing pnpm deps hash
+      #  pnpmDeps = fetchPnpmDeps {
+      #    inherit (oldAttrs)
+      #      pname
+      #      version
+      #      src
+      #      patches
+      #      ;
+      #    inherit pnpm;
+      #    fetcherVersion = 3;
+      #    hash = "sha256-3EEeHmtOAdcm2Q3eNUEl2RbTFRB4YBKcZLFtEmwbVOk=";
+      #  };
+      #}))
       element-desktop
       gomuks-web
 
@@ -50,7 +52,7 @@
         # Give JOSM a bit more RAM (hopefully it's enough :sob:)
         extraJavaOpts = "-Xmx32G";
       })
-      logseq
+      #logseq
       nautilus
 
       (qgis.overrideAttrs (oldAttrs: {
@@ -107,6 +109,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16" # for gomuks
+    "electron-39.8.10" # for logseq
   ];
 
   hardware.rtl-sdr.enable = true;

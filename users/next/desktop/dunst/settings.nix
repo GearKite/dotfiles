@@ -217,7 +217,7 @@ _: {
       max_icon_size = 128;
 
       # Paths to default icons (only neccesary when not using recursive icon lookup)
-      icon_path = "/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/";
+      #icon_path = "/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/";
 
       ### History ###
 

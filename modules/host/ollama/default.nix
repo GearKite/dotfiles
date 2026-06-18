@@ -7,7 +7,6 @@
   services.ollama = {
     enable = true;
     package = lib.mkDefault pkgs.ollama-cuda;
-    acceleration = lib.mkDefault "cuda";
   };
 
   allowed-unfree = [

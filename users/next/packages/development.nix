@@ -12,10 +12,11 @@
     nil
     deadnix
     statix
-    nixfmt-rfc-style
+    nixfmt
 
     # android
     scrcpy
+    android-tools
   ];
 
   programs.direnv.enable = true;
