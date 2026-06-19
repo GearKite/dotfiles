@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   lock-true = {
     Value = true;
@@ -8,7 +8,7 @@ in
 {
   home-manager.users.next.programs.firefox = {
     enable = true;
-    package = pkgs.librewolf; # programs.librewolf doesn't (yet) support policies
+    package = pkgs.firefox;
     policies = {
       # Extensions
       ExtensionSettings = {
@@ -86,8 +86,8 @@ in
     enable = true;
     wrappedBinaries = {
       librewolf = {
-        executable = "${pkgs.librewolf}/bin/librewolf";
-        profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
+        executable = lib.getExe pkgs.firefox;
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
         extraArgs = [
           # Required for U2F USB stick
           "--ignore=private-dev"

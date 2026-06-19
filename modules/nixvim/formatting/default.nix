@@ -35,6 +35,9 @@
           "deadnix"
           "statix"
         ];
+        lua = {
+          __unkeyed-1 = "stylua";
+        };
       };
       format_on_save = ''
         function(bufnr)
@@ -63,6 +66,9 @@
             "fix"
           ];
           stream = "stdout";
+        };
+        stylua = {
+          command = lib.getExe pkgs.stylua;
         };
       };
     };

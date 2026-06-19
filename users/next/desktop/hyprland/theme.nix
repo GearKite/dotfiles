@@ -35,11 +35,30 @@
   };
 
   wayland.windowManager.hyprland.settings.env = [
-    "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
-    "HYPRCURSOR_SIZE,${toString config.home.pointerCursor.size}"
-
-    "XCURSOR_THEME,${config.home.pointerCursor.name}"
-    "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
+    {
+      _args = [
+        "HYPRCURSOR_THEME"
+        config.home.pointerCursor.name
+      ];
+    }
+    {
+      _args = [
+        "HYPRCURSOR_SIZE"
+        config.home.pointerCursor.size
+      ];
+    }
+    {
+      _args = [
+        "XCURSOR_THEME"
+        config.home.pointerCursor.name
+      ];
+    }
+    {
+      _args = [
+        "XCURSOR_SIZE"
+        config.home.pointerCursor.size
+      ];
+    }
   ];
 
   home.packages = with pkgs; [

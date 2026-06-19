@@ -1,0 +1,7 @@
+hl.window_rule({ workspace = 11, match = { class = "thunderbird" } })
+hl.window_rule({ workspace = 15, match = { class = "Element" } })
+hl.window_rule({ workspace = 17, match = { class = "Element" } })
+hl.window_rule({ workspace = 16, match = { class = "nuclear" } })
+hl.window_rule({ workspace = 18, match = { class = "Signal-desktop" } })
+hl.window_rule({ float = true, match = { title = "Qalculate!" }, size = { 800, 600 } })
+hl.window_rule({ size = { 800, 600 }, float = true, match = { class = "org.pulseaudio.pavucontrol" } })

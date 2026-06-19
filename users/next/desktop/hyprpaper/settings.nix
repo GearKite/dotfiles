@@ -6,12 +6,14 @@ in
   services.hyprpaper.settings = {
     ipc = "on";
     splash = true;
-    splash_offset = 2.0;
+    splash_offset = 2;
 
     preload = [ wallpaper-file ];
 
-    wallpaper = [
-      ", ${wallpaper-file}"
-    ];
+    wallpaper = {
+      monitor = "";
+      path = wallpaper-file;
+      fit_mode = "cover";
+    };
   };
 }

@@ -3,15 +3,9 @@ _: {
     mainBar = {
       # Workspaces
       "hyprland/workspaces" = {
-        on-click = "activate";
         active-only = false;
         all-outputs = false;
-        format = "{}";
-        format-icons = {
-          urgent = "";
-          active = "";
-          default = "";
-        };
+        format = "{icon}";
       };
 
       # Fuzzel Application Launcher

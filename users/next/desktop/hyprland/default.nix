@@ -6,19 +6,6 @@
     imports = [
       ./theme.nix
 
-      ./settings/animations.nix
-      ./settings/autostart.nix
-      ./settings/binds.nix
-      ./settings/decorations.nix
-      ./settings/environments.nix
-      ./settings/general.nix
-      ./settings/gestures.nix
-      ./settings/input.nix
-      ./settings/layouts.nix
-      ./settings/misc.nix
-      #./settings/monitor.nix
-      ./settings/windowrules.nix
-      ./settings/workspaces.nix
     ];
 
     wayland.windowManager.hyprland = {
@@ -32,6 +19,43 @@
       # Optional
       # Whether to enable hyprland-session.target on hyprland startup
       systemd.enable = true;
+
+      configType = "lua";
+      extraLuaFiles = {
+        "animations" = {
+          content = ./settings/animations.lua;
+        };
+        "autostart" = {
+          content = ./settings/autostart.lua;
+        };
+        "binds" = {
+          content = ./settings/binds.lua;
+        };
+        "decorations" = {
+          content = ./settings/decorations.lua;
+        };
+        "environments" = {
+          content = ./settings/environments.lua;
+        };
+        "general" = {
+          content = ./settings/general.lua;
+        };
+        "input" = {
+          content = ./settings/input.lua;
+        };
+        "layouts" = {
+          content = ./settings/layouts.lua;
+        };
+        "misc" = {
+          content = ./settings/misc.lua;
+        };
+        "windowrules" = {
+          content = ./settings/windowrules.lua;
+        };
+        "workspaces" = {
+          content = ./settings/workspaces.lua;
+        };
+      };
     };
 
     home.packages = with pkgs; [
