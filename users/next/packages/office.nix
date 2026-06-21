@@ -3,6 +3,9 @@
   unstable,
   ...
 }:
+let
+  mpvScripts = with pkgs.mpvScripts; [ mpris ];
+in
 {
   home-manager.users.next = {
     home.packages = with pkgs; [
@@ -16,7 +19,6 @@
       qbittorrent
 
       # media
-      mpv
       oculante
       (picard.overrideAttrs (oldAttrs: {
         preFixup = oldAttrs.preFixup + "makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})";
@@ -77,6 +79,11 @@
         ];
       })
     ];
+
+    programs.mpv = {
+      enable = true;
+      scripts = mpvScripts;
+    };
 
     services.jellyfin-mpv-shim = {
       enable = true;

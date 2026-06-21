@@ -30,6 +30,7 @@
     ./desktop
     ./editor
     ./shell
+    ./syncthing
 
     ./packages/development.nix
     ./packages/image.nix

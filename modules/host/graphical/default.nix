@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 {
   services.xserver.enable = false;
 
@@ -8,13 +12,12 @@
   environment.systemPackages = with pkgs; [
     ddcutil
     jmtpfs
-    kdePackages.ksshaskpass
   ];
 
   # graphical pinentry
   programs.ssh = {
     enableAskPassword = true;
-    askPassword = "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
+    askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
   };
   programs.gnupg.agent = {
     enable = true;

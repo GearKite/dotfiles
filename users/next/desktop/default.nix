@@ -1,14 +1,16 @@
 { ... }:
 {
   imports = [
+    ./ashell
     ./dunst
     ./fuzzel
     ./hypridle
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./hyprpolkitagent
+    ./hyprsunset
     ./kanshi
-    ./waybar
     ./wlogout
 
     ./default-apps.nix

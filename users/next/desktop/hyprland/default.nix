@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   home-manager.users.next = {
     imports = [
@@ -16,9 +19,7 @@
       # Whether to enable XWayland
       xwayland.enable = true;
 
-      # Optional
-      # Whether to enable hyprland-session.target on hyprland startup
-      systemd.enable = true;
+      systemd.enable = false;
 
       configType = "lua";
       extraLuaFiles = {
@@ -73,41 +74,5 @@
 
   security.sudo = {
     enable = true;
-    extraRules = [
-      {
-        commands = [
-          {
-            command = "${pkgs.ddcutil}/bin/ddcutil";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/ddcutil";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }
-    ];
-    extraConfig = with pkgs; ''
-      Defaults:picloud secure_path="${
-        lib.makeBinPath [
-          ddcutil
-        ]
-      }:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-    '';
-  };
-
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
   };
 }

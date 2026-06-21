@@ -16,7 +16,6 @@
     zip
     unzip
     brightnessctl
-    syncthing
   ];
 
 }
