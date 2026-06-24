@@ -1,9 +1,9 @@
 _: {
   powerManagement.enable = true;
 
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=1h
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "1h";
+  };
 
   services.tlp = {
     enable = true;
