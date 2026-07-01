@@ -1,21 +1,28 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  system,
+  inputs,
+  ...
+}:
 {
   programs.hyprland = {
     enable = true;
     withUWSM = true;
+    package = inputs.hyprland.packages.${system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   };
 
   home-manager.users.next = {
     imports = [
       ./theme.nix
-
     ];
 
     wayland.windowManager.hyprland = {
       # Whether to enable Hyprland wayland compositor
       enable = true;
       # The hyprland package to use
-      package = pkgs.hyprland;
+      package = inputs.hyprland.packages.${system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
       # Whether to enable XWayland
       xwayland.enable = true;
 
@@ -73,6 +80,10 @@
   };
 
   security.sudo = {
+    enable = true;
+  };
+
+  security.polkit = {
     enable = true;
   };
 }
