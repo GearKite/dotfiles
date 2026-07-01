@@ -25,6 +25,7 @@ in
       }))
       lrcget
       unstable.tidal-hifi
+      feishin
 
       # messengers
       signal-desktop
