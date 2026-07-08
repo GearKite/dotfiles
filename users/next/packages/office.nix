@@ -55,7 +55,7 @@ in
         # Give JOSM a bit more RAM (hopefully it's enough :sob:)
         extraJavaOpts = "-Xmx32G";
       })
-      #logseq
+      (logseq.override { electron_39 = electron; })
       nautilus
 
       (qgis.overrideAttrs (oldAttrs: {
@@ -117,7 +117,6 @@ in
 
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16" # for gomuks
-    "electron-39.8.10" # for logseq
   ];
 
   hardware.rtl-sdr.enable = true;
