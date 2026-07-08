@@ -6,9 +6,9 @@ let
   };
 in
 {
-  home-manager.users.next.programs.firefox = {
+  home-manager.users.next.programs.librewolf = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs.librewolf;
     policies = {
       # Extensions
       ExtensionSettings = {
@@ -86,8 +86,8 @@ in
     enable = true;
     wrappedBinaries = {
       librewolf = {
-        executable = lib.getExe pkgs.firefox;
-        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        executable = lib.getExe pkgs.librewolf;
+        profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
         extraArgs = [
           # Required for U2F USB stick
           "--ignore=private-dev"
