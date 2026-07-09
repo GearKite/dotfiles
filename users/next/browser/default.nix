@@ -80,6 +80,10 @@ in
         "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = lock-true;
       };
     };
+    languagePacks = [
+      "en-GB"
+      "lv"
+    ];
   };
 
   programs.firejail = {
