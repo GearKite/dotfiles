@@ -76,6 +76,8 @@
       # Clipboard history
       cliphist
       wl-clipboard
+      #
+      inputs.hyprcursor.packages.${system}.hyprcursor
     ];
   };
 

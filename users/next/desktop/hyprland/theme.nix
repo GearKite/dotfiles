@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../constants.nix
@@ -62,7 +66,6 @@
   ];
 
   home.packages = with pkgs; [
-    hyprcursor
     catppuccin
   ];
 }
