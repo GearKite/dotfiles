@@ -18,6 +18,12 @@
     easyeffects
     qjackctl
     audacity
+
+    stremio-linux-shell
+  ];
+
+  allowed-unfree = [
+    "stremio-linux-shell"
   ];
 
   # OBS virtual cam
