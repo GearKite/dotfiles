@@ -18,11 +18,7 @@
   programs.ssh = {
     enableAskPassword = true;
     askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
-  };
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-tty;
-    enableSSHSupport = true;
+    startAgent = true;
   };
 
   # For ddcutil
