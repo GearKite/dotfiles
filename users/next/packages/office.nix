@@ -58,6 +58,7 @@ in
       (logseq.override { electron_39 = electron; })
       nautilus
       keepassxc
+      cozy
 
       (qgis.overrideAttrs (oldAttrs: {
         extraPythonPackages = [ pkgs.python3Packages.pillow ];
