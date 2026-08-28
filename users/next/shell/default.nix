@@ -35,11 +35,14 @@ in
         enable = true;
         plugins = [
           "git"
-          "thefuck"
           "direnv"
         ];
         theme = "agnoster";
       };
+    };
+    programs.pay-respects = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 

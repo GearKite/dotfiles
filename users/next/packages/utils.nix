@@ -16,6 +16,7 @@
     zip
     unzip
     brightnessctl
+    nix-search-cli
   ];
 
 }
