@@ -11,7 +11,6 @@
 
   environment.systemPackages = with pkgs; [
     ddcutil
-    jmtpfs
   ];
 
   # graphical pinentry
