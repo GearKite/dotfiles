@@ -22,7 +22,7 @@
     blank.url = "github:divnix/blank";
     flake-utils.url = "github:numtide/flake-utils";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-26.05";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
