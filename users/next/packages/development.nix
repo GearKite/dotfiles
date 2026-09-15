@@ -5,7 +5,6 @@
 {
   home-manager.users.next.home.packages = with pkgs; [
     git
-    vscodium-fhs
     sqlitebrowser
 
     # nix coding tools
