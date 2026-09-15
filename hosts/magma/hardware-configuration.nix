@@ -44,16 +44,19 @@
   fileSystems."/mnt/old" = {
     device = "192.168.2.27:/mnt/old-hdds";
     fsType = "nfs4";
+    options = [ "nofail" ];
   };
 
   fileSystems."/mnt/bulk" = {
     device = "192.168.2.27:/mnt/home/server";
     fsType = "nfs4";
+    options = [ "nofail" ];
   };
 
   fileSystems."/mnt/family" = {
     device = "192.168.2.27:/mnt/home/family";
     fsType = "nfs4";
+    options = [ "nofail" ];
   };
 
   swapDevices = [
