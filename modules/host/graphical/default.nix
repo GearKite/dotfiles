@@ -9,10 +9,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    ddcutil
-  ];
-
   # graphical pinentry
   programs.ssh = {
     enableAskPassword = true;
@@ -20,8 +16,11 @@
     startAgent = true;
   };
 
-  # For ddcutil
-  hardware.i2c = {
+  # Monitor brightness control
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+  services.ddccontrol = {
     enable = true;
   };
 

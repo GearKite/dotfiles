@@ -1,4 +1,5 @@
 {
+  config,
   ...
 }:
 {
@@ -15,6 +16,7 @@
         "scanner"
         "lp"
         "dialout"
+        config.hardware.i2c.group # monitor brightness
       ];
     };
 
