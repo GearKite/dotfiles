@@ -93,6 +93,7 @@ in
 
     services.etesync-dav = {
       enable = true;
+      package = pkgs.etesync-dav.override { python3Packages = pkgs.python313Packages; };
     };
 
     services.activitywatch = {
