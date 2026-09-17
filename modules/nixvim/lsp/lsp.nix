@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   plugins = {
     lspconfig = {
       enable = true;
@@ -28,19 +28,31 @@ _: {
           ];
         };
       };
-      ansiblels.enable = true;
+      ansiblels = {
+        enable = true;
+        package = pkgs.ansible-language-server;
+      };
       basedpyright.enable = true;
+      cssls.enable = true;
       eslint.enable = true;
       html.enable = true;
       jsonls.enable = true;
       marksman.enable = true;
-      statix.enable = true;
       nixd = {
         enable = true;
         config = {
           formatting.command = "nixfmt";
         };
       };
+      shuck.enable = true;
+      statix.enable = true;
+      superhtml.enable = true;
+      systemd_lsp = {
+        enable = true;
+        package = pkgs.systemd-lsp;
+      };
+      taplo.enable = true;
+      yamlls.enable = true;
     };
   };
 }

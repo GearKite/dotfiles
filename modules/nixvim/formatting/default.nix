@@ -14,6 +14,7 @@
           "shfmt"
         ];
         cpp = [ "clang_format" ];
+        html = [ "superhtml" ];
         javascript = {
           __unkeyed-1 = "prettierd";
           timeout_ms = 2000;
@@ -69,6 +70,9 @@
         };
         stylua = {
           command = lib.getExe pkgs.stylua;
+        };
+        superhtml = {
+          command = lib.getExe pkgs.superhtml;
         };
       };
     };

@@ -6,6 +6,7 @@
     ./core
     ./filetree
     ./formatting
+    ./guess-indent
     ./lsp
     ./statusline
     ./tabline
@@ -13,5 +14,6 @@
     ./treesitter
     ./visuals
     ./wakatime
+    ./yaml-schema-detect
   ];
 }

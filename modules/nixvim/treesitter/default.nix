@@ -19,6 +19,7 @@
       settings = {
         highlight.enable = true;
         illuminate.enable = true;
+        folding.enable = true;
       };
     };
   };
