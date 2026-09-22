@@ -16,6 +16,11 @@
     startAgent = true;
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-all;
+  };
+
   # Monitor brightness control
   environment.systemPackages = with pkgs; [
     brightnessctl
