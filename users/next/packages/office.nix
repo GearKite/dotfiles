@@ -23,6 +23,7 @@ in
       (picard.overrideAttrs (oldAttrs: {
         preFixup = oldAttrs.preFixup + "makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})";
       }))
+      beets
       lrcget
       unstable.tidal-hifi
       feishin
