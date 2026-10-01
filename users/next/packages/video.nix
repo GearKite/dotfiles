@@ -1,16 +1,21 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 {
   home-manager.users.next.home.packages = with pkgs; [
     (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
+      plugins =
+        with pkgs.obs-studio-plugins;
+        [
+          wlrobs
+          obs-backgroundremoval
+          obs-pipewire-audio-capture
+          obs-vaapi
+        ]
+        ++ [ inputs.self.packages.${pkgs.system}.scrcpy-camera ];
     })
 
     yt-dlp

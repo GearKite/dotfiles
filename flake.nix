@@ -78,8 +78,14 @@
       hostConfigurations = builtins.filter (entry: hostEntries.${entry} == "directory") (
         builtins.attrNames hostEntries
       );
+
+      obs-cuda-overlay = _final: prev: {
+        obs-studio = prev.obs-studio.override { cudaSupport = true; };
+      };
     in
     {
+      overlays.obs-cuda = obs-cuda-overlay;
+
       nixosConfigurations = builtins.listToAttrs (
         map (name: {
           inherit name;
@@ -95,6 +101,7 @@
       let
         pkgs = import inputs.nixpkgs {
           inherit system;
+          overlays = [ obs-cuda-overlay ];
         };
 
         nixvim' = inputs.nixvim.legacyPackages.${system};
@@ -138,7 +145,10 @@
           ];
         };
 
-        packages = { inherit nixvim; };
+        packages = {
+          inherit nixvim;
+          scrcpy-camera = pkgs.callPackage ./pkgs/scrcpy-camera.nix { };
+        };
       }
     );
 }
