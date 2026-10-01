@@ -42,19 +42,13 @@
   };
 
   fileSystems."/mnt/old" = {
-    device = "192.168.2.27:/mnt/old-hdds";
+    device = "192.168.14.1:/mnt/old-hdds/main";
     fsType = "nfs4";
     options = [ "nofail" ];
   };
 
-  fileSystems."/mnt/bulk" = {
-    device = "192.168.2.27:/mnt/home/server";
-    fsType = "nfs4";
-    options = [ "nofail" ];
-  };
-
-  fileSystems."/mnt/family" = {
-    device = "192.168.2.27:/mnt/home/family";
+  fileSystems."/mnt/vm-public-media-library" = {
+    device = "192.168.14.1:/mnt/home/arc2/media";
     fsType = "nfs4";
     options = [ "nofail" ];
   };
