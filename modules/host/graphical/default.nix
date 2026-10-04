@@ -35,4 +35,16 @@
     enable = true;
     enable32Bit = true;
   };
+
+  fonts = {
+    packages =
+      with pkgs;
+      [
+        noto-fonts
+        fira-code
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+  };
 }
