@@ -1,13 +1,8 @@
-{
-  inputs,
-  system,
-  ...
-}:
-{
+_: {
   home-manager.users.next = {
     services.hyprpolkitagent = {
       enable = true;
-      package = inputs.hyprpolkitagent.packages.${system}.hyprpolkitagent;
+      #package = inputs.hyprpolkitagent.packages.${system}.hyprpolkitagent;
     };
   };
 }

@@ -25,18 +25,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    hyprpolkitagent = {
-      url = "github:hyprwm/hyprpolkitagent";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    hyprcursor = {
-      url = "github:hyprwm/hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   nixConfig = {

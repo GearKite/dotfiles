@@ -1,15 +1,13 @@
 {
   pkgs,
-  system,
-  inputs,
   ...
 }:
 {
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-    package = inputs.hyprland.packages.${system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+    #package = inputs.hyprland.packages.${system}.hyprland;
+    #portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   };
 
   home-manager.users.next = {
@@ -21,8 +19,8 @@
       # Whether to enable Hyprland wayland compositor
       enable = true;
       # The hyprland package to use
-      package = inputs.hyprland.packages.${system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+      #package = inputs.hyprland.packages.${system}.hyprland;
+      #portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
       # Whether to enable XWayland
       xwayland.enable = true;
 
@@ -77,7 +75,7 @@
       cliphist
       wl-clipboard
       #
-      inputs.hyprcursor.packages.${system}.hyprcursor
+      hyprcursor
     ];
   };
 
