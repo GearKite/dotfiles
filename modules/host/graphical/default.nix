@@ -26,7 +26,7 @@
     brightnessctl
   ];
   services.ddccontrol = {
-    enable = true;
+    enable = false;
   };
 
   services.gvfs.enable = true;

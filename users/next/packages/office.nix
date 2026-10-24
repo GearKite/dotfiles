@@ -93,12 +93,11 @@ in
     };
 
     services.etesync-dav = {
-      enable = true;
-      package = pkgs.etesync-dav.override { python3Packages = pkgs.python313Packages; };
+      enable = false;
     };
 
     services.activitywatch = {
-      enable = true;
+      enable = false;
       watchers = {
         awatcher = {
           package = pkgs.awatcher;

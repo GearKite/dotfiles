@@ -1,7 +1,6 @@
-{ config, hostname, ... }:
+{ hostname, ... }:
 {
   nix.settings = {
-    extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
     experimental-features = [
       "nix-command"
       "flakes"
@@ -18,8 +17,6 @@
   nix.optimise = {
     automatic = true;
   };
-
-  programs.ccache.enable = true;
 
   system.autoUpgrade = {
     enable = true;
