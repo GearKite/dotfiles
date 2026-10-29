@@ -92,10 +92,6 @@ in
       enable = true;
     };
 
-    services.etesync-dav = {
-      enable = false;
-    };
-
     services.activitywatch = {
       enable = false;
       watchers = {
