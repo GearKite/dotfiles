@@ -42,6 +42,7 @@
       [
         noto-fonts
         fira-code
+        open-dyslexic
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     enableDefaultPackages = true;
