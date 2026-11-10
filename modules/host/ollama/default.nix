@@ -8,7 +8,7 @@
     enable = true;
     package = lib.mkDefault pkgs.ollama-cuda;
     environmentVariables = {
-      OLLAMA_CONTEXT_LENGTH = "64000";
+      OLLAMA_CONTEXT_LENGTH = "128000";
     };
   };
 
