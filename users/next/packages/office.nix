@@ -107,6 +107,11 @@ in
         };
       };
     };
+
+    programs.opencode = {
+      enable = true;
+      web.enable = true;
+    };
   };
 
   programs.kdeconnect.enable = true;
