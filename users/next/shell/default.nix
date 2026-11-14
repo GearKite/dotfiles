@@ -25,7 +25,8 @@ in
 
       shellAliases = {
         ll = "ls -l";
-        update = "sudo nixos-rebuild --flake /etc/nixos#magma switch";
+        switch = "sudo nixos-rebuild --flake /etc/nixos#magma switch";
+        update = "sudo nixos-rebuild --flake /etc/nixos#magma boot";
       };
       history = {
         size = 10000;
