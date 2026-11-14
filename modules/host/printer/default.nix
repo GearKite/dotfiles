@@ -30,14 +30,6 @@
 
   services.udev.packages = [ pkgs.sane-airscan ];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    xsaneGimp = pkgs.xsane.override { gimpSupport = true; };
-  };
-
-  environment.systemPackages = with pkgs; [
-    xsaneGimp
-  ];
-
   imports = [
     (inputs.nixpkgs + "/nixos/modules/services/hardware/sane_extra_backends/brscan4.nix")
   ];

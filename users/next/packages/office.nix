@@ -59,6 +59,7 @@ in
       nautilus
       keepassxc
       cozy
+      naps2
 
       (qgis.overrideAttrs (oldAttrs: {
         extraPythonPackages = [ pkgs.python3Packages.pillow ];
