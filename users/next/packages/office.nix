@@ -1,6 +1,5 @@
 {
   pkgs,
-  unstable,
   ...
 }:
 let
@@ -15,18 +14,12 @@ in
 
       # internet
       thunderbird
-      monero-gui
       qbittorrent
 
       # media
       oculante
-      (picard.overrideAttrs (oldAttrs: {
-        preFixup = oldAttrs.preFixup + "makeWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ rsgain ]})";
-      }))
       beets
-      lrcget
-      unstable.tidal-hifi
-      feishin
+      strawberry
 
       # messengers
       signal-desktop
@@ -45,11 +38,9 @@ in
       #    hash = "sha256-3EEeHmtOAdcm2Q3eNUEl2RbTFRB4YBKcZLFtEmwbVOk=";
       #  };
       #}))
-      element-desktop
       gomuks-web
 
       # utils & misc
-      distrobox
       qalculate-gtk
       onlyoffice-desktopeditors
       (josm.override {
