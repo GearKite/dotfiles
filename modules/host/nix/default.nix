@@ -25,5 +25,6 @@
     persistent = true;
     flake = "github:gearkite/dotfiles#${hostname}";
     flags = [ "--accept-flake-config" ];
+    operation = "boot";
   };
 }
