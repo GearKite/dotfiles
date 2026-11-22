@@ -10,4 +10,9 @@
     pkgs.lazygit
     pkgs.ripgrep
   ];
+
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 }
