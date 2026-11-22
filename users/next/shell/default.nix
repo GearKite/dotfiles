@@ -27,6 +27,7 @@ in
         ll = "ls -l";
         switch = "sudo nixos-rebuild --flake /etc/nixos#magma switch";
         update = "sudo nixos-rebuild --flake /etc/nixos#magma boot";
+        jrnl = " jrnl";
       };
       history = {
         size = 10000;

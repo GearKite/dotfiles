@@ -51,6 +51,7 @@ in
       keepassxc
       cozy
       naps2
+      jrnl
 
       (qgis.overrideAttrs (oldAttrs: {
         extraPythonPackages = [ pkgs.python3Packages.pillow ];
