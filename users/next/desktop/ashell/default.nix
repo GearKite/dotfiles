@@ -1,4 +1,10 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  outputs,
+  system,
+  ...
+}:
 {
   home-manager.users.next = {
     programs.ashell = {
@@ -15,6 +21,7 @@
             "SystemInfo"
           ];
           right = [
+            "NextEvent"
             "MediaPlayer"
             "Tray"
             [
@@ -27,6 +34,15 @@
         workspaces = {
           visibility_mode = "All";
         };
+        CustomModule = [
+          {
+            name = "NextEvent";
+            icon = "󰸗";
+            listen_cmd = lib.getExe outputs.packages.${system}.next-event;
+            type = "Button";
+            command = "thunderbird -calendar & hyprctl dispatch 'hl.dsp.focus({ window = \"class:^(thunderbird)$\" })'";
+          }
+        ];
       };
     };
   };

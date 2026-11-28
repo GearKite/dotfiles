@@ -128,6 +128,7 @@
         packages = {
           inherit nixvim;
           scrcpy-camera = pkgs.callPackage ./pkgs/scrcpy-camera.nix { };
+          next-event = pkgs.callPackage ./pkgs/next-event.nix { };
         };
       }
     );
